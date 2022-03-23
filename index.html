@@ -1,318 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nickparov Portfolio</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-    <!-- Favicon -->
-    
+    <!-- Page Javascript -->
+    <script src="./index.js"></script>
 
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <!-- Page Css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modal.css" />
 
-
-    
-    <!-- Required meta tags -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keyword" content="creative, business, freelancer, agency, responsive, corporate, interior, minimal, modern, personal, portfolio, simple">
-    
-    <!-- Title -->
-    <title>Nickparov Portfolio Website</title>
-    
-    <!-- Required Plugins -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900%7CTitillium+Web:200,300,400,600,700" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e9f66f74ff.js"></script>
-    
-    <!-- Theme Style File -->
-    <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-    <header>
-        <div class="logo">
-            <!-- <div class="center-circle"></div> -->
-            <i class="fab fa-react"></i>
+    <!-- bootsrtrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
+    />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <div id="menu">
+        <div class="menu-item selected">
+            <p>Home</p>
         </div>
-        <div class="menu">
-            <div class="menu-item-box active"> <a href="" class="menu-item" data-link=".hero-section"><i class="menu-item-icon lnr lnr-home"></i></a> <span class="menu-item-name sec-font">home</span> </div>
-            <div class="menu-item-box"> <a href="" class="menu-item" data-link=".about"><i class="menu-item-icon lnr lnr-user"></i></a> <span class="menu-item-name sec-font">about</span> </div>
-            <div class="menu-item-box"> <a href="" class="menu-item" data-link=".services"><i class="menu-item-icon lnr lnr-star"></i></a> <span class="menu-item-name sec-font">services</span> </div>
-            <div class="menu-item-box"> <a href="" class="menu-item" data-link=".portfolio"><i class="menu-item-icon lnr lnr-briefcase"></i></a> <span class="menu-item-name sec-font">portfolio</span> </div>
-            <div class="menu-item-box"> <a href="" class="menu-item" data-link=".blog"><i class="menu-item-icon lnr lnr-book"></i></a> <span class="menu-item-name sec-font">blog</span> </div>
-            <!-- <div class="menu-item-box"> <a href="" class="menu-item" data-link=".contact"><i class="menu-item-icon lnr lnr-envelope"></i></a> <span class="menu-item-name sec-font">contact</span> </div> -->
+        <div class="menu-item">
+            <p>Articles</p>
         </div>
-        <div class="go-down"> <i class="lnr-arrow-down lnr"></i> </div>
-    </header>
-    <div class="content">
-        <div class="hero-section">
-            <div class="section-hero-content">
-                <h1>Hi! <br/>I'm <span>Nick Parovoy</span><br>Full-stack web developer </h1>
-                <h2 class="hero-section__second-title"><i class="fab fa-js"></i> <i class="fab fa-php"></i> <i class="fab fa-wordpress-simple"></i> <i class="fab fa-react"></i></h2>
-                <a href="#" data-link=".about" class="sec-font btn theme-btn menu_like-link">Portfolio <span class="lnr lnr-arrow-right"></span></a>
-            </div>
+        <div class="menu-item">
+            <p>Notes</p>
         </div>
-        <section class="about">
-            <div class="container">
-                <div class="row" style="align-items: center;">
-                    <div class="col-12">
-                        <div class="section-title-uin"> About Me </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="my-img-box">
-                            <div class="my-img"> <img src="img/my-img.jpg" alt="" draggable="false" class="img-fluid"> </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="info">
-                            <h5 class="sec-font">HELLO, I'M Nick Parovoy</h5>
-                            <h1>I'm In The Web Development starting from 2014 <span> With<br>4 Years</span> Of Experience. </h1>
-                            <ul class="row text-center">
-                                <li class="col-lg-6 col-md-6 col-6 col-sm-6 ">
-                                    <div class="about-box">
-                                        <h3>1000+</h3>
-                                        <h4 class="sec-font">Experience hours</h4>
-                                    </div>
-                                </li>
-                                <li class="col-lg-6 col-md-6 col-6 col-sm-6 ">
-                                    <div class="about-box bn">
-                                        <h3>4</h3>
-                                        <h4 class="sec-font">Major Projects</h4>
-                                    </div>
-                                </li>
-                            </ul>
-                            <hr>
-                            <p class="text-center bigger_font sec_font">Skillset: <span class="skills_font">Vanilla JS(ES5), PHP(7), React.js, Laravel, Wordpress.</span> </p>
-                            <hr>
-                            <ul class="social-media">
-                                <li> <a href="mailto:nickparov@gmail.com"><i class="far fa-envelope"></i></a></li>
-                                <li> <a href="https://github.com/nickparov"><i class="fab fa-github-square"></i></a></li>
-                                <li> <a href="https://t.me/nickparov"><i class="fab fa-telegram-plane"></i></a></li>
-                            </ul>
-                            <div class="skills">
-                                <div class="skill-box">
-                                    <h4 class="skill-title sec-font">Wordpress</h4>
-                                    <div class="progress-line"> <span data-percent="90" style="width: 75%;"><span class="percent-tooltip">75%</span></span> </div>
-                                </div>
-                                <div class="skill-box">
-                                    <h4 class="skill-title sec-font">React.js</h4>
-                                    <div class="progress-line"> <span data-percent="75" style="width: 80%;"><span class="percent-tooltip">80%</span></span> </div>
-                                </div>
-                                <div class="skill-box">
-                                    <h4 class="skill-title sec-font">HTML5 &amp; CSS3</h4>
-                                    <div class="progress-line"> <span data-percent="55" style="width: 96%;"><span class="percent-tooltip">96%</span></span> </div>
-                                </div>
-                                <div class="skill-box">
-                                    <h4 class="skill-title sec-font">Javascript &amp; PHP</h4>
-                                    <div class="progress-line"> <span data-percent="75" style="width: 82%;"><span class="percent-tooltip">82%</span></span> </div>
-                                </div>
-                                <a href="https://github.com/nickparov/portfolio/raw/master/img/cv/CV.pdf" class="btn effect-btn theme-btn">download cv <span class="lnr lnr-arrow-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="portfolio">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 two-title">
-                        <div class=" section-title-uin"> Portfolio </div>
-                        <div class="section-title">
-                            <h2 class="sec-font">My Portfolio</h2>
-                            <p>Here is the list of some projects<br>that I have done.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="projects-slider">
-                            <div class="item item-bordered">
-                                <div class="project-box" data-url="https://nickparov.github.io/Marketing_Platform_React/">
-                                    <div class="project-img"> <img src="img/projects/app5.png" alt=""> </div>
-                                    <div class="project-info">
-                                        <h3 class="sec-font">MIR</h3>
-                                        <h5 class="project-tag">Marketing app <br>(on-going development)</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item item-bordered">
-                                <div class="project-box" data-url="http://promonstri.com/index.html">
-                                    <div class="project-img"> <img src="img/projects/app2.png" alt=""> </div>
-                                    <div class="project-info">
-                                        <h3 class="sec-font">Promonstri</h3>
-                                        <h5 class="project-tag">Event-organizing website</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item item-bordered">
-                                <div class="project-box" data-url="http://www.aviapromo.com.ua/">
-                                    <div class="project-img"> <img src="img/projects/app4.png" alt=""> </div>
-                                    <div class="project-info">
-                                        <h3 class="sec-font">Aviapromo</h3>
-                                        <h5 class="project-tag">Ticket selling website</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="services">
-            <div class="container">
-                <div class="row align">
-                    <div class="col-12 two-title">
-                        <div class=" white section-title-uin"> Services </div>
-                        <div class="section-title-white">
-                            <h2 class="sec-font">I provide these services</h2>
-                            <p>This is the list of servises I can provide as <br> I have a strong experience in these technologies.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-sm-6 col-12">
-                        <div class="service-box"> <i class="fab fa-wordpress-simple"></i>
-                            <h3 class="text-bg">Wordpress Development</h3>
-                            <p>Wordpress custom theme development, perfect user experience, elegant solutions</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-sm-6 col-12">
-                        <div class="service-box"> <i class="fab fa-react"></i>
-                            <h3 class="text-bg">React-based Solutions</h3>
-                            <p>For larger projects I use React library for easier and faster development</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-sm-6 col-12">
-                        <div class="service-box"> <i class="ti-mobile"></i>
-                            <h3 class="text-bg">Responsiveness</h3>
-                            <p>All of my projects are responsive and adjustable to any screen size.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-sm-6 col-12">
-                        <div class="service-box"> <i class="ti-announcement"></i>
-                            <h3 class="text-bg">Maintaining Projects</h3>
-                            <p>After I'm finished with the project, I regularly maintain it by making updates in UI and UX</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-sm-6 col-12">
-                        <div class="service-box"> <i class="fas fa-users"></i>
-                            <h3 class="text-bg">Client Support</h3>
-                            <p>I'm always trying to figure out the client's needs to create the best fitting solution</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-sm-6 col-12">
-                        <div class="service-box"> <i class="far fa-clock"></i>
-                            <h3 class="text-bg">FLexible Timelines</h3>
-                            <p>I provide flexible timelines and give credible dates for accomplishing the given project</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- <section class="blog">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 two-title">
-                        <div class=" section-title-uin"> Latest Posts </div>
-                        <div class="section-title">
-                            <h2 class="sec-font">My Life Blog.</h2>
-                            <p>It is a blog of the things that I've done <br>or I'm currently working on</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-body">
-                            <div class="category"> <a href="#" title="View all posts in UI">Updating the app</a> </div>
-                            <div class="blog-img"> <img src="img/blog/photo3.jpg" alt="" draggable="false" class="img-fluid"> </div>
-                            <div class="post-info">
-                                <div class="post-date">06 Feb 2019</div><a href="typed.html#" class="disabled-link">
-                                    <h4 class="blog-item-title">Updating some of the old features of my Burger Builder Project</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-body">
-                            <div class="category"> <a href="https://nickparov.github.io/Marketing_Platform_React/" title="View all posts in Design">Project Development</a> </div>
-                            <div class="blog-img"> <img src="img/blog/photo2.jpg" alt="" draggable="false" class="img-fluid"> </div>
-                            <div class="post-info">
-                                <div class="post-date">06 Jan 2019</div><a href="https://nickparov.github.io/Marketing_Platform_React/" x>
-                                    <h4 class="blog-item-title">Started working on the new project: MIR</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-body">
-                            <div class="category"> <a href="#" title="View all posts in E-Commerce">Coffe Talks</a> </div>
-                            <div class="blog-img"> <img src="img/blog/photo1.jpg" alt="" draggable="false" class="img-fluid"> </div>
-                            <div class="post-info">
-                                <div class="post-date">08 Mar 2018</div><a href="typed.html#" class="disabled-link">
-                                    <h4 class="blog-item-title">Better to be fully energized than overworked</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- <section class="contact" id="to_hide">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 two-title">
-                        <div class=" section-title-uin"> Contact </div>
-                        <div class="section-title">
-                            <h2 class="sec-font">Feel free to text me.</h2>
-                            <p>If you consider about <span class="modified-span">giving me a project or updating your website</span>, <br>feel free to text me anytime!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row align">
-                    <div class="col-md-12">
-                        <form method="POST" id="contact_form">
-                            <div class="row">
-                                <div class="col-md-4"> <input type="text" placeholder="Your Name"  name="name" class="contact_form--input"> </div>
-                                <div class="col-md-8"> <input type="email" placeholder="Your Email Address"  name="email" class="contact_form--input"> </div>
-                                <div class="col-md-12"> <textarea placeholder="Enter Your Message" name="message" class="contact_form--input"></textarea> </div>
-                                <div class="col-lg-8 col-md-12">
-                                </div>
-                                <div class="col-lg-4 col-md-4"> <input type="submit" value="Send Message"> </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-  <!-- <section class="services">
-   
-        </section>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
+    </div> -->
+    <div class="container p-5 main">
+      <div
+        id="main-content-box"
+        class="row left-def-padding"
+        style="margin-top: 70px"
+      >
+        <div class="col-lg-7" style="padding-top: 110px">
+          <h1><b>Simple Solutions.</b></h1>
+          <div class="message-box mt-4">
+            <p>
+              <i class="bi bi-window-sidebar"></i>&NonBreakingSpace;Websites
+              <br /><i class="bi bi-code-slash"></i>&NonBreakingSpace;Scripts
+              <br /><i class="bi bi-phone"></i>&NonBreakingSpace;Mobile Apps
+              <br /><i class="bi bi-tv"></i>&NonBreakingSpace;Desktop Apps
+            </p>
+          </div>
 
-                    </div>
-                </div>
+          <div class="contacts-box mt-4">
+            <p>
+              <span
+                >Email:
+                <a
+                  href="mailto:nickparov@gmail.com"
+                  class="td-none color-main-green"
+                  >nickparov@gmail.com</a
+                ></span
+              >
+              <span class="d-block mt-1"
+                >Phone:
+                <a href="tel:+13127147589" class="td-none color-main-green"
+                  >+1(312)714-75-89</a
+                ></span
+              >
+              <span class="d-block mt-1">Location: US, Chicago</span>
+            </p>
+          </div>
+          <div class="btns-box mt-4">
+            <a
+              class="btn btn-custom-mine"
+              data-micromodal-trigger="modal-email"
+              href="mailto:nickparov@gmail.com"
+              >Email <i class="bi bi-envelope"></i
+            ></a>
+          </div>
+        </div>
+        <div class="col-lg-5" id="dogImageDiv">
+          <div id="image-background-circle"></div>
+          <img src="./ava.png" alt="" id="dogImg" />
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-center">
+        <a id="scroll-down-arrow" style="color: black" href="#"
+          ><i style="font-size: 3rem" class="bi bi-arrow-down"></i
+        ></a>
+      </div>
+
+      <div id="content-categories-box" class="row def-padding">
+        <h1 class="text-center"><b>What I create?</b></h1>
+        <h4 class="text-center mt-1 mb-3">
+          My name is <u>Nick</u> and I create following:
+        </h4>
+        <div class="content-categories-box-main mt-3">
+          <div class="row p-5 content-category-legend">
+            <div
+              class="col-lg-4 d-flex justify-content-center flex-column align-items-center py-3"
+            >
+              <i class="bi bi-window-sidebar icon-software-bar"></i>
+              <p>Applications</p>
             </div>
-        </footer> -->
+            <div
+              class="col-lg-4 d-flex justify-content-center flex-column align-items-center py-3"
+            >
+              <i class="bi bi-tools icon-software-bar"></i>
+              <p>Tool programms</p>
+            </div>
+            <div
+              class="col-lg-4 d-flex justify-content-center flex-column align-items-center py-3"
+            >
+              <i class="bi bi-lightbulb icon-software-bar"></i>
+              <p>Features</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="works-content-box"
+        class="row def-padding"
+        style="margin-top: 160px; margin-bottom: 160px"
+      >
+        <h1 class="text-center pb-2"><b>My Projects & Works</b></h1>
+        <h4 class="text-center pb-5">
+          <u>Click</u> on the project box to see details.
+        </h4>
+        <h4 class="pb-4 text-center">
+          <span class="p-4 proj-category"
+            ><i class="bi bi-window-sidebar"></i
+            >&NonBreakingSpace;Websites</span
+          >
+          <span class="p-4 proj-category"
+            ><i class="bi bi-code-slash"></i>&NonBreakingSpace;Scripts</span
+          >
+          <span class="p-4 proj-category"
+            ><i class="bi bi-tv"></i>&NonBreakingSpace;Desktop Apps</span
+          >
+          <span class="p-4 selected proj-category"
+            ><i class="bi bi-text-center"></i>&NonBreakingSpace;All</span
+          >
+        </h4>
+        <div id="projects-list" class="row"></div>
+        <div class="proj-details_section text-center pt-4">
+          <p>For all the details regarding the projects above contact me. *</p>
+        </div>
+      </div>
+
+      <div
+        id="bottom-content-box"
+        class="def-padding"
+        style="margin-top: 160px; margin-bottom: 160px"
+      >
+        <div class="row">
+          <div class="col-lg-5 border p-5">
+            <h1 class=""><b>Got a Project?</b></h1>
+            <h4>Let me take care of it.</h4>
+            <a class="mt-2 btn btn-custom-mine" href="mailto:nickparov@gmail.com">
+              Give me insights <i class="bi bi-lightbulb"></i>
+            </a>
+          </div>
+          <div class="col-lg-7 p-5">
+            <h1 class=""><b>Contact me in a moment?</b></h1>
+            <h4>Message me and get a reply in no time.</h4>
+            <a class="mt-2 btn btn-custom-mine" href="mailto:nickparov@gmail.com">
+              Let's Chat <i class="bi bi-chat-left-text"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer-box pb-4">
+        <h4 class="text-center">
+          <i id="github-icon" class="bi bi-github"></i>
+        </h4>
+        <h4 class="text-center">Made by nickparov</h4>
+      </div>
     </div>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/typed.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhrdEzlfpnsnfq4MgU1e1CCsrvVx2d59s"></script>
-    <script src="js/gmaps.js"></script>
-    <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>
