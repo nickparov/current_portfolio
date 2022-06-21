@@ -69,7 +69,7 @@ const projects = [
     desc: "Simple Timesheet manager built for automating process of submitting.",
     link: null,
     private: false,
-    status: "deployed",
+    status: "in process",
   },
   {
     type: "Website",
@@ -89,7 +89,7 @@ const projects = [
     desc: "ChatBot service that provides users to directly interact with their customers.",
     link: null,
     private: false,
-    status: "development",
+    status: "in process",
   },
   {
     type: "Website",
@@ -99,15 +99,17 @@ const projects = [
     desc: "Laravel DB Excel export module",
     link: null,
     private: false,
+    status: "deployed",
   },
   {
     type: "Website",
     category: CATEGORIES.SCRIPTS,
     title: "JS Admin Framework",
     icon: "code-slash",
-    desc: "Built for Admin Panel as a JS Practice",
+    desc: "Built for Admin Panel Side of Web Application",
     link: null,
     private: false,
+    status: "deployed",
   },
   {
     type: "Website",
@@ -117,6 +119,7 @@ const projects = [
     desc: "Javascript redirect module.",
     link: null,
     private: true,
+    status: "deployed",
   },
 ];
 
@@ -130,16 +133,22 @@ const onLoad = {
     }px`;
   },
   populateWorks: () => {
-    function __singleProjHTMl({ title, icon, desc, type }) {
+    function __singleProjHTMl({ title, icon, desc, type, status }) {
+      const badgeClasses = [];
+      if(status.includes("deployed")) {
+        badgeClasses.push('badge', 'bg-success');
+      } else {
+        badgeClasses.push('badge', 'bg-warning');
+      }
+
       return `<div class="project-box-parent col-lg-6 col-md-12 col-sm-12">
                         <div class="single-project-box" data-title="${title}">
                             <i class="background-white-icon bi bi-${icon}"></i>
                             <div class="project-description">
                                 <p>${title}</p>
-                                <span class="description-small">${desc.substr(
-                                  0,
-                                  25
-                                )}...</span><br>
+                                <span class="description-small">${desc}</span><br>
+                                <span class="description-small ${badgeClasses.join(" ")}">${status}</span>
+
                             </div>
                         </div>
                     </div>`;

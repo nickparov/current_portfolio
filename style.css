@@ -1,9 +1,9 @@
 * {
-    font-family: 'Comfortaa', cursive;
+    font-family: "Comfortaa", cursive;
 }
 
 body {
-    padding-top: 40px;  
+    padding-top: 40px;
     /* background-color: #ffeca5 !important; */
 }
 
@@ -14,7 +14,6 @@ body {
 .left-def-padding {
     padding-left: 60px;
 }
-
 
 .def-padding {
     padding-left: 60px;
@@ -36,8 +35,6 @@ body {
     background-color: #fff5d3 !important;
 }
 
-
-
 /* .content-category-option:hover, .content-category-option.selected {
     background-color: rgb(25,135,84) !important;
     color: white;
@@ -46,8 +43,6 @@ body {
 .btn-custom-mine:hover {
     background-color: #ffeca5 !important;
 }
-
-
 
 #image-background-circle {
     position: absolute;
@@ -76,12 +71,12 @@ body {
 }
 
 #scroll-down-arrow {
-    animation: arrowAnimation 2s ease-in infinite normal forwards ;
+    animation: arrowAnimation 2s ease-in infinite normal forwards;
 }
 
 @keyframes arrowAnimation {
-    0%{
-        transform: translateY(0px)
+    0% {
+        transform: translateY(0px);
     }
     50% {
         transform: translateY(-20px);
@@ -90,7 +85,6 @@ body {
         transform: translateY(0px);
     }
 }
-
 
 .experience-box h4 {
     font-weight: 300;
@@ -105,9 +99,7 @@ body {
     /* border-radius: 10px; */
 }
 
-
 .background-white-icon {
-    
     padding: 20px;
     font-size: 2.5em;
     /* border-right: 1px solid black; */
@@ -120,7 +112,7 @@ body {
 
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
 .single-project-box .project-description {
@@ -130,7 +122,6 @@ body {
 
 .single-project-box .project-description p {
     font-size: 1.3em;
-
 }
 
 .single-project-box p {
@@ -139,23 +130,30 @@ body {
 
 .single-project-box:hover {
     cursor: pointer;
-    -webkit-box-shadow: 0px 0px 9px 5px rgba(0,0,0,0.1); 
-    box-shadow: 0px 0px 9px 5px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 0px 9px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 9px 5px rgba(0, 0, 0, 0.1);
     background-color: #ffeca5;
 }
 
 .proj-category.selected {
     color: white;
-    background-color: rgb(25,135,84) !important;
+    background-color: rgb(25, 135, 84) !important;
     cursor: default !important;
 }
 
 .proj-category {
     transition: all 0.3s ease;
+    display: inline-block;
+}
+
+@media (max-width: 430px) {
+    .proj-category {
+        display: block;
+    }
 }
 
 .proj-category:hover {
-    background-color: rgba(25,135,84, 0.6);
+    background-color: rgba(25, 135, 84, 0.6);
     color: white;
     cursor: pointer;
 }
@@ -164,10 +162,7 @@ body {
     font-size: small;
 }
 
-
-
 #menu {
-
     position: fixed;
     top: 20px;
     left: 20px;
@@ -191,28 +186,34 @@ body {
 }
 
 #menu .menu-item:hover {
-    background-color: rgba(25,135,84, 0.6);
+    background-color: rgba(25, 135, 84, 0.6);
     color: white;
     cursor: pointer;
 }
 
 #menu .menu-item.selected {
     color: white;
-    background-color: rgb(25,135,84) !important;
+    background-color: rgb(25, 135, 84) !important;
     cursor: default !important;
 }
 
-
-
 .pallete-top {
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(255,236,165,1) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 236, 165, 1) 100%
+    );
     height: 250px;
 }
 
 .pallete-bottom {
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(255,236,165,1) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 236, 165, 1) 100%
+    );
     height: 250px;
 }
 
@@ -240,7 +241,7 @@ body {
 .content-category-option:hover {
     /* background-color:#fff5d3; */
     background-color: #fff5d3;
-}   
+}
 
 .content-category-option.selected {
     /* background-color: #ffeca5; */
@@ -262,7 +263,7 @@ body {
 }
 
 #footer-box:hover {
-    color: rgb(25,135,84);
+    color: rgb(25, 135, 84);
     cursor: pointer;
 }
 
@@ -270,13 +271,12 @@ body {
     transition: all 0.3s ease;
 }
 
-
 .td-none {
     text-decoration: none;
 }
 
 .color-main-green {
-    color: rgb(25,135,84);
+    color: rgb(25, 135, 84);
 }
 
 /* link */
