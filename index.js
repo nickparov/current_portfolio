@@ -32,8 +32,8 @@ function generateRandNum(min, max) {
 }
 
 const CATEGORIES = {
-  WEBSITES: "WEBSITES",
-  SCRIPTS: "SCRIPTS",
+  WEB_APPS: "WEB_APPS",
+  CODE: "CODE",
   MOBILE_APPS: "MOBILE_APPS",
   DESKTOP_APPS: "DESKTOP_APPS",
 };
@@ -43,7 +43,7 @@ let selectedCategory = null;
 const projects = [
   {
     type: "Website",
-    category: CATEGORIES.WEBSITES,
+    category: CATEGORIES.WEB_APPS,
     title: "Aviapromo",
     icon: "window-sidebar",
     desc: "Air ticket selling website",
@@ -53,7 +53,7 @@ const projects = [
   },
   {
     type: "Website",
-    category: CATEGORIES.WEBSITES,
+    category: CATEGORIES.WEB_APPS,
     title: "Shato",
     icon: "window-sidebar",
     desc: "Hotel Website built on CodeIgniter",
@@ -73,7 +73,7 @@ const projects = [
   },
   {
     type: "Website",
-    category: CATEGORIES.WEBSITES,
+    category: CATEGORIES.WEB_APPS,
     title: "Uni App Admin Panel",
     icon: "window-sidebar",
     desc: "Admin panel built for University App.",
@@ -83,7 +83,17 @@ const projects = [
   },
   {
     type: "Website",
-    category: CATEGORIES.WEBSITES,
+    category: CATEGORIES.WEB_APPS,
+    title: "Trade/Loot Game.",
+    icon: "window-sidebar",
+    desc: "Web Online Game built on NodeJS/SQLite, no frameworks used except (Express.js).",
+    link: null,
+    private: false,
+    status: "deployed",
+  },
+  {
+    type: "Website",
+    category: CATEGORIES.WEB_APPS,
     title: "ChatBot Service",
     icon: "window-sidebar",
     desc: "ChatBot service that provides users to directly interact with their customers.",
@@ -93,7 +103,7 @@ const projects = [
   },
   {
     type: "Website",
-    category: CATEGORIES.SCRIPTS,
+    category: CATEGORIES.CODE,
     title: "DB Export Module",
     icon: "code-slash",
     desc: "Laravel DB Excel export module",
@@ -103,7 +113,7 @@ const projects = [
   },
   {
     type: "Website",
-    category: CATEGORIES.SCRIPTS,
+    category: CATEGORIES.CODE,
     title: "JS Admin Framework",
     icon: "code-slash",
     desc: "Built for Admin Panel Side of Web Application",
@@ -113,7 +123,7 @@ const projects = [
   },
   {
     type: "Website",
-    category: CATEGORIES.SCRIPTS,
+    category: CATEGORIES.CODE,
     title: "Redirect Module",
     icon: "code-slash",
     desc: "Javascript redirect module.",
@@ -179,6 +189,7 @@ const onLoad = {
       if (category.includes("ALL")) return "ALL";
       // which cat?
       let categoryID = category.toUpperCase().substr(1, category.length);
+      console.log(categoryID)
       categoryID =
         categoryID.split(" ").length > 1
           ? categoryID.split(" ").join("_")
