@@ -251,6 +251,7 @@ body {
 .content-category-legend > div {
     /* background-color:#ffeca5; */
     background-color: #fff5d3;
+    min-height: 210px;
     color: black;
 }
 
