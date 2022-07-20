@@ -44,21 +44,30 @@ const CATEGORIES = {
     DESKTOP_APPS: "DESKTOP_APPS",
 };
 
-let selectedCategory = null;
+let selectedCategory = CATEGORIES.WEB_APPS;
 
 const projects = [
     {
         category: CATEGORIES.WEB_APPS,
-        title: "Aviapromo",
+        title: "Company HEAT",
         icon: "window-sidebar",
-        desc: "Air ticket selling website",
+        desc: "Air Ticket Selling Company Web App.",
         status: "deployed",
         link: "http://www.aviapromo.com.ua/",
         private: false,
     },
     {
         category: CATEGORIES.WEB_APPS,
-        title: "Shato",
+        title: "Timesheet Manager",
+        icon: "window-sidebar",
+        desc: "Web App for people to manage their timesheets.",
+        status: "deployed",
+        link: null,
+        private: false,
+    },
+    {
+        category: CATEGORIES.WEB_APPS,
+        title: "Hotel SHATO",
         icon: "window-sidebar",
         desc: "Hotel Website built on CodeIgniter",
         link: null,
@@ -76,16 +85,16 @@ const projects = [
     },
     {
         category: CATEGORIES.WEB_APPS,
-        title: "Uni App Admin Panel",
+        title: "PHD Evaluation System",
         icon: "window-sidebar",
-        desc: "Admin panel built for University App.",
+        desc: "Application for PHD Students Evaluation.",
         link: null,
         private: false,
         status: "deployed",
     },
     {
         category: CATEGORIES.WEB_APPS,
-        title: "Knights",
+        title: "Knights Game",
         icon: "window-sidebar",
         desc: "Web Online Game built on NodeJS/SQLite, no frameworks used except (Express.js).",
         link: null,
@@ -94,7 +103,7 @@ const projects = [
     },
     {
         category: CATEGORIES.WEB_APPS,
-        title: "Chicago Stations Data",
+        title: "Chicago Stations Visualization",
         icon: "window-sidebar",
         desc: "Parsing Script / Graph Respresentation of Public Dataset",
         link: "https://nickparov.github.io/cs424-doc-website/project2.html",
@@ -135,6 +144,33 @@ const projects = [
         desc: "Javascript redirect module.",
         link: null,
         private: true,
+        status: "deployed",
+    },
+    {
+        category: CATEGORIES.WEB_APPS,
+        title: "Matrices Visualization",
+        icon: "window-sidebar",
+        desc: "Visualizing tool for matrix transformation (GROUP)",
+        link: null,
+        private: false,
+        status: "deployed",
+    },
+    {
+        category: CATEGORIES.WEB_APPS,
+        title: "Building Based Web Game",
+        icon: "window-sidebar",
+        desc: "Web Based Building Park Game (GROUP)",
+        link: null,
+        private: false,
+        status: "deployed",
+    },
+    {
+        category: CATEGORIES.WEB_APPS,
+        title: "Seaman Air Company",
+        icon: "window-sidebar",
+        desc: "Air Ticket Selling Company Web App.",
+        link: "http://seaman-air-tickets.aviapromo.com.ua/",
+        private: false,
         status: "deployed",
     },
 ];
@@ -232,24 +268,25 @@ const onLoad = {
         // add class p-1
     },
     singleProjModalHandlers: () => {
-        document.querySelectorAll(".single-project-box").forEach((el) => {
-            el.addEventListener("click", (e) => {
-                const projTitle = e.target.getAttribute("data-title");
-                const proj = projects.filter(
-                    ({ title }) => title == projTitle
-                )[0];
-                console.log(proj);
-                // populate modal
-                ModalTools.populate(
-                    proj.title,
-                    proj.desc,
-                    proj.private,
-                    proj.link
-                );
-                // show Modal
-                // place here the func to open Modal
-            });
-        });
+        // document.querySelectorAll(".single-project-box").forEach((el) => {
+        //     const redirect = () => window.open(proj.link, "_blank");
+        //     el.addEventListener("click", (e) => {
+        //         const projTitle = e.target.getAttribute("data-title");
+        //         const proj = projects.filter(
+        //             ({ title }) => title == projTitle
+        //         )[0];
+        //         proj.link && redirect();
+        //         // // populate modal
+        //         // ModalTools.populate(
+        //         //     proj.title,
+        //         //     proj.desc,
+        //         //     proj.private,
+        //         //     proj.link
+        //         // );
+        //         // show Modal
+        //         // place here the func to open Modal
+        //     });
+        // });
     },
     commonHandlers: () => {
       // Arrow Handler
