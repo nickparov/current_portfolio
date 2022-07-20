@@ -86,6 +86,10 @@ body {
     }
 }
 
+#projects-list {
+    min-height: 280px;
+}
+
 .experience-box h4 {
     font-weight: 300;
 }
@@ -207,6 +211,21 @@ body {
     height: 250px;
 }
 
+.welcome-content {
+    padding-top: 110px;
+}
+
+@media (max-width: 992px) {
+    .welcome-content {
+        text-align: center;
+        padding-top: 0px;
+    }
+
+    #ArrowContainer {
+        transform: translateY(50px);
+    }
+}
+
 .pallete-bottom {
     background: rgb(255, 255, 255);
     background: linear-gradient(
@@ -223,9 +242,9 @@ body {
     padding-bottom: 200px;
 }
 
-/* #works-content-box {
-    min-height: 570px;
-} */
+#works-content-box { 
+    /* min-height: 890px !important; */
+}
 
 .content-category-option {
     padding: 25px !important;
