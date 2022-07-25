@@ -61,7 +61,7 @@ const projects = [
         title: "Timesheet Manager",
         icon: "window-sidebar",
         desc: "Web App for people to manage their timesheets.",
-        status: "deployed",
+        status: "in process",
         link: null,
         private: false,
     },
