@@ -19,6 +19,7 @@ body {
     padding-left: 60px;
     padding-right: 60px;
 }
+
 @media only screen and (max-width: 1200px) {
     .def-padding {
         padding: 0;
@@ -235,10 +236,6 @@ body {
 }
 
 @media (min-width: 401px) {
-    .welcome-content {
-        text-align: center;
-        padding-top: 0px;
-    }
 
     #ArrowContainer {
         transform: translateY(50px);
