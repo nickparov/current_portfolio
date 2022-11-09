@@ -38,17 +38,18 @@ function generateRandNum(min, max) {
 }
 
 const CATEGORIES = {
-    WEB_APPS: "WEB_APPS",
+    SOFTWARE: "SOFTWARE",
     CODE: "CODE",
     MOBILE_APPS: "MOBILE_APPS",
     DESKTOP_APPS: "DESKTOP_APPS",
 };
 
-let selectedCategory = CATEGORIES.WEB_APPS;
+let selectedCategory = CATEGORIES.SOFTWARE;
 
-const projects = [
+let projects = [
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Company HEAT",
         icon: "window-sidebar",
         desc: "Air Ticket Selling Company Web App.",
@@ -57,7 +58,8 @@ const projects = [
         private: false,
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Timesheet Manager",
         icon: "window-sidebar",
         desc: "Web App for people to manage their timesheets.",
@@ -66,16 +68,18 @@ const projects = [
         private: false,
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Hotel SHATO",
         icon: "window-sidebar",
         desc: "Hotel Website built on CodeIgniter",
-        link: null,
+        link: "https://github.com/nickparov/Hotel-Website-PHP",
         private: false,
         status: "deployed",
     },
     {
         category: CATEGORIES.DESKTOP_APPS,
+        id: null,
         title: "Timesheet Manager",
         icon: "tv",
         desc: "Simple Timesheet manager built for automating process of submitting a timesheet.",
@@ -84,25 +88,28 @@ const projects = [
         status: "in process",
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "PHD Evaluation System",
         icon: "window-sidebar",
         desc: "Application for PHD Students Evaluation.",
-        link: null,
+        link: "https://phd-eval.engr.uic.edu/dgs?page=ControlPanel",
         private: false,
         status: "deployed",
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Knights Game",
         icon: "window-sidebar",
         desc: "Web Online Game built on NodeJS/SQLite, no frameworks used except (Express.js).",
-        link: null,
+        link: "https://knight-app-backend-3.herokuapp.com/",
         private: false,
         status: "deployed",
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Chicago Stations Visualization",
         icon: "window-sidebar",
         desc: "Parsing Script / Graph Respresentation of Public Dataset",
@@ -111,7 +118,8 @@ const projects = [
         status: "deployed",
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "ChatBot Service",
         icon: "window-sidebar",
         desc: "ChatBot service that provides users to directly interact with their customers.",
@@ -121,6 +129,7 @@ const projects = [
     },
     {
         category: CATEGORIES.CODE,
+        id: null,
         title: "DB Export Module",
         icon: "code-slash",
         desc: "Laravel DB Excel export module",
@@ -130,6 +139,7 @@ const projects = [
     },
     {
         category: CATEGORIES.CODE,
+        id: null,
         title: "JS Admin Framework",
         icon: "code-slash",
         desc: "Built for Admin Panel Side of Web Application",
@@ -139,6 +149,7 @@ const projects = [
     },
     {
         category: CATEGORIES.CODE,
+        id: null,
         title: "Redirect Module",
         icon: "code-slash",
         desc: "Javascript redirect module.",
@@ -147,25 +158,38 @@ const projects = [
         status: "deployed",
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Matrices Visualization",
         icon: "window-sidebar",
-        desc: "Visualizing tool for matrix transformation (GROUP)",
-        link: null,
+        desc: "Visualizing tool for matrix transformation (GROUP).",
+        link: "https://volodymyrvakhniuk.github.io/Linear-Transformation/",
         private: false,
         status: "deployed",
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
+        title: "Pathways Project.",
+        icon: "window-sidebar",
+        desc: "Mobile app built using ReactNative. LinkedIn like app.",
+        link: "https://github.com/nickparov/pathways-project-mobile",
+        private: false,
+        status: "deployed",
+    },
+    {
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Building Based Web Game",
         icon: "window-sidebar",
-        desc: "Web Based Building Park Game (GROUP)",
-        link: null,
+        desc: "Web Based Building Park Game (GROUP).",
+        link: "https://national-park-builder.herokuapp.com/",
         private: false,
         status: "deployed",
     },
     {
-        category: CATEGORIES.WEB_APPS,
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Seaman Air Company",
         icon: "window-sidebar",
         desc: "Air Ticket Selling Company Web App.",
@@ -175,6 +199,10 @@ const projects = [
     },
 ];
 
+projects = projects.map((el, index) => {
+    return { ...el, id: index };
+});
+
 const onLoad = {
     welcomeContentHeight: () => {
         // setup the welcome content height
@@ -183,8 +211,9 @@ const onLoad = {
         }px`;
     },
     populateWorks: () => {
-        function __singleProjHTMl({ title, icon, desc, type, status }) {
+        function __singleProjHTMl({ title, icon, desc, type, status, id }) {
             const badgeClasses = [];
+
             if (status.includes("deployed")) {
                 badgeClasses.push("badge", "bg-success");
             } else {
@@ -192,7 +221,7 @@ const onLoad = {
             }
 
             return `<div class="project-box-parent col-lg-6 col-md-12 col-sm-12">
-                        <div class="single-project-box" data-title="${title}">
+                        <div class="single-project-box" data-title="${title}" data-id="${id}">
                             <i class="background-white-icon bi bi-${icon}"></i>
                             <div class="project-description">
                                 <p>${title}</p>
@@ -200,7 +229,6 @@ const onLoad = {
                                 <span class="description-small ${badgeClasses.join(
                                     " "
                                 )}">${status}</span>
-
                             </div>
                         </div>
                     </div>`;
@@ -221,8 +249,10 @@ const onLoad = {
             ? projects.filter(({ category }) => selectedCategory == category)
             : [...projects];
 
-        if (projectsToDisplay.length > 0)
-            for (proj of projectsToDisplay) __popWork(proj);
+        if (projectsToDisplay.length > 0) {
+            console.log(projectsToDisplay);
+            projectsToDisplay.forEach((proj) => __popWork(proj));
+        }
     },
     projCategoryHandlers: () => {
         function txtToCatID(category) {
@@ -237,6 +267,7 @@ const onLoad = {
 
             return categoryID;
         }
+
         document.querySelectorAll("span.proj-category").forEach((_node) => {
             _node.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -268,36 +299,36 @@ const onLoad = {
         // add class p-1
     },
     singleProjModalHandlers: () => {
-        // document.querySelectorAll(".single-project-box").forEach((el) => {
-        //     const redirect = () => window.open(proj.link, "_blank");
-        //     el.addEventListener("click", (e) => {
-        //         const projTitle = e.target.getAttribute("data-title");
-        //         const proj = projects.filter(
-        //             ({ title }) => title == projTitle
-        //         )[0];
-        //         proj.link && redirect();
-        //         // // populate modal
-        //         // ModalTools.populate(
-        //         //     proj.title,
-        //         //     proj.desc,
-        //         //     proj.private,
-        //         //     proj.link
-        //         // );
-        //         // show Modal
-        //         // place here the func to open Modal
-        //     });
-        // });
+        document.querySelectorAll(".single-project-box").forEach((el) => {
+            const redirect = (l) => window.open(l, "_blank");
+
+            el.addEventListener("click", (e) => {
+                const projID = parseInt(
+                    e.currentTarget.getAttribute("data-id")
+                );
+                const proj = projects.find((el) => el.id === projID);
+                const { link } = proj;
+
+                link && redirect(link);
+            });
+        });
     },
     commonHandlers: () => {
-      // Arrow Handler
-      const doContentBoxElem = document.getElementById("content-categories-box");
-      document.getElementById("ArrowContainer").addEventListener("click", (e) => {
-        e.preventDefault();
+        // Arrow Handler
+        const doContentBoxElem = document.getElementById(
+            "content-categories-box"
+        );
+        document
+            .getElementById("ArrowContainer")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
 
-        window.scrollTo({top: doContentBoxElem.offsetTop + 150, behavior: 'smooth'})
-      })
-
-    }
+                window.scrollTo({
+                    top: doContentBoxElem.offsetTop + 150,
+                    behavior: "smooth",
+                });
+            });
+    },
 };
 
 // ONLOAD Handler
