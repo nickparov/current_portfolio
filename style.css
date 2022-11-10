@@ -37,7 +37,7 @@ body {
 @media only screen and (max-width: 400px) {
     #dogImageDiv {
         transform: translateY(-210px) translateX(96px) scale(0.45);
-        position: absolute; 
+        position: absolute;
         display: block;
     }
 
@@ -123,6 +123,10 @@ body {
     /* border-radius: 10px; */
 
     cursor: pointer;
+}
+
+.single-project-box.link-empty {
+    cursor: not-allowed;
 }
 
 .background-white-icon {
@@ -236,7 +240,6 @@ body {
 .welcome-content {
     padding-top: 110px;
 }
-
 
 @media (min-width: 401px) {
     #ArrowContainer {

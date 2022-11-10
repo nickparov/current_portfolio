@@ -211,8 +211,9 @@ const onLoad = {
         }px`;
     },
     populateWorks: () => {
-        function __singleProjHTMl({ title, icon, desc, type, status, id }) {
+        function __singleProjHTMl({ title, icon, desc, type, status, id, link }) {
             const badgeClasses = [];
+            const boxClasses = ["single-project-box"];
 
             if (status.includes("deployed")) {
                 badgeClasses.push("badge", "bg-success");
@@ -220,8 +221,14 @@ const onLoad = {
                 badgeClasses.push("badge", "bg-warning");
             }
 
+            if (!link) {
+                boxClasses.push("link-empty");
+            }
+
             return `<div class="project-box-parent col-lg-6 col-md-12 col-sm-12">
-                        <div class="single-project-box" data-title="${title}" data-id="${id}">
+                        <div class="${boxClasses.join(
+                            " "
+                        )}" data-title="${title}" data-id="${id}">
                             <i class="background-white-icon bi bi-${icon}"></i>
                             <div class="project-description">
                                 <p>${title}</p>
