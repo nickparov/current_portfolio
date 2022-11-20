@@ -114,6 +114,10 @@ body {
     font-weight: 300;
 }
 
+span.undeline {
+    text-decoration: underline;
+}
+
 .single-project-box {
     /* fcf8e9 */
     background-color: #fff5d3;

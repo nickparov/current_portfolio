@@ -41,7 +41,7 @@ const CATEGORIES = {
     SOFTWARE: "SOFTWARE",
     CODE: "CODE",
     MOBILE_APPS: "MOBILE_APPS",
-    DESKTOP_APPS: "DESKTOP_APPS",
+    // DESKTOP_APPS: "DESKTOP_APPS",
 };
 
 let selectedCategory = CATEGORIES.SOFTWARE;
@@ -76,16 +76,6 @@ let projects = [
         link: "https://github.com/nickparov/Hotel-Website-PHP",
         private: false,
         status: "deployed",
-    },
-    {
-        category: CATEGORIES.DESKTOP_APPS,
-        id: null,
-        title: "Timesheet Manager",
-        icon: "tv",
-        desc: "Simple Timesheet manager built for automating process of submitting a timesheet.",
-        link: null,
-        private: false,
-        status: "in process",
     },
     {
         category: CATEGORIES.SOFTWARE,
@@ -134,7 +124,7 @@ let projects = [
         icon: "code-slash",
         desc: "Laravel DB Excel export module",
         link: null,
-        private: false,
+        private: true,
         status: "deployed",
     },
     {
@@ -144,7 +134,7 @@ let projects = [
         icon: "code-slash",
         desc: "Built for Admin Panel Side of Web Application",
         link: null,
-        private: false,
+        private: true,
         status: "deployed",
     },
     {
@@ -211,18 +201,37 @@ const onLoad = {
         }px`;
     },
     populateWorks: () => {
-        function __singleProjHTMl({ title, icon, desc, type, status, id, link }) {
-            const badgeClasses = [];
+        function __singleProjHTMl({
+            title,
+            icon,
+            desc,
+            type,
+            status,
+            id,
+            link,
+            private,
+        }) {
+            const badgeElems = [];
             const boxClasses = ["single-project-box"];
 
             if (status.includes("deployed")) {
-                badgeClasses.push("badge", "bg-success");
-            } else {
-                badgeClasses.push("badge", "bg-warning");
+                badgeElems.push(["badge bg-success", "deployed"]);
+            }
+
+            if (status.includes("in process")) {
+                badgeElems.push(["badge bg-warning", "in process"]);
+            }
+
+            if (private) {
+                badgeElems.push(["badge bg-secondary", "private"]);
             }
 
             if (!link) {
                 boxClasses.push("link-empty");
+            }
+
+            function getSingleBadgeHTML([badgeClasses, status]) {
+                return `<span class="description-small ${badgeClasses}">${status}</span>`;
             }
 
             return `<div class="project-box-parent col-lg-6 col-md-12 col-sm-12">
@@ -233,9 +242,7 @@ const onLoad = {
                             <div class="project-description">
                                 <p>${title}</p>
                                 <span class="description-small">${desc}</span><br>
-                                <span class="description-small ${badgeClasses.join(
-                                    " "
-                                )}">${status}</span>
+                                ${badgeElems.map(el => getSingleBadgeHTML(el)).join(" ")}
                             </div>
                         </div>
                     </div>`;
