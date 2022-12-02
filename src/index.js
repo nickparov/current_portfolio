@@ -1,5 +1,22 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import '../modal.css';
+import '../style.css';
+
+import Resume from '../Resume v1.pdf';
+import DogImg from '../ava.png';
+
+
+// assets setup
+document.getElementById("resumeDownloadBtn").href = Resume;
+document.getElementById("dogImg").src = DogImg;
+
+// animations
+AOS.init();
+
 const ModalTools = (function () {
-    function populate(title, desc, private, link = null) {
+    function populate(title, desc, _private, link = null) {
         // change title
         document.querySelector(
             "#modal-single-project .modal__title"
@@ -16,7 +33,7 @@ const ModalTools = (function () {
             linkNode.href = link;
         } else {
             linkNode.innerHTML = `<span>${
-                private ? "Private" : "No Link"
+                _private ? "Private" : "No Link"
             }</span>`;
             linkNode.href = `#`;
         }
@@ -64,7 +81,7 @@ let projects = [
         icon: "window-sidebar",
         desc: "Web App for people to manage their timesheets.",
         status: "in process",
-        link: null,
+        link: "https://github.com/nickparov/timesheet-manager",
         private: false,
     },
     {
@@ -201,16 +218,16 @@ const onLoad = {
         }px`;
     },
     populateWorks: () => {
-        function __singleProjHTMl({
-            title,
-            icon,
-            desc,
-            type,
-            status,
-            id,
-            link,
-            private,
-        }) {
+        function __singleProjHTMl(props) {
+            const {
+                title,
+                icon,
+                desc,
+                type,
+                status,
+                id,
+                link,
+            } = props;
             const badgeElems = [];
             const boxClasses = ["single-project-box"];
 
@@ -222,7 +239,7 @@ const onLoad = {
                 badgeElems.push(["badge bg-warning", "in process"]);
             }
 
-            if (private) {
+            if (props.private) {
                 badgeElems.push(["badge bg-secondary", "private"]);
             }
 
@@ -242,7 +259,9 @@ const onLoad = {
                             <div class="project-description">
                                 <p>${title}</p>
                                 <span class="description-small">${desc}</span><br>
-                                ${badgeElems.map(el => getSingleBadgeHTML(el)).join(" ")}
+                                ${badgeElems
+                                    .map((el) => getSingleBadgeHTML(el))
+                                    .join(" ")}
                             </div>
                         </div>
                     </div>`;
@@ -259,7 +278,7 @@ const onLoad = {
                 .insertAdjacentHTML("beforeend", __singleProjHTMl(proj));
         }
 
-        projectsToDisplay = selectedCategory
+        const projectsToDisplay = selectedCategory
             ? projects.filter(({ category }) => selectedCategory == category)
             : [...projects];
 
@@ -338,7 +357,7 @@ const onLoad = {
                 e.preventDefault();
 
                 window.scrollTo({
-                    top: doContentBoxElem.offsetTop + 150,
+                    top: doContentBoxElem.offsetTop - 50,
                     behavior: "smooth",
                 });
             });
