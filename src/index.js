@@ -13,7 +13,7 @@ document.getElementById("resumeDownloadBtn").href = Resume;
 document.getElementById("dogImg").src = DogImg;
 
 // animations
-AOS.init();
+AOS.init({delay: 100});
 
 const ModalTools = (function () {
     function populate(title, desc, _private, link = null) {
@@ -69,7 +69,7 @@ let projects = [
         id: null,
         title: "Company HEAT",
         icon: "window-sidebar",
-        desc: "Air Ticket Selling Company Web App.",
+        desc: "Web App for Air Ticket Selling Company.",
         status: "deployed",
         link: "http://www.aviapromo.com.ua/",
         private: false,
@@ -77,7 +77,7 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Timesheet Manager",
+        title: "Timesheet Manager Service",
         icon: "window-sidebar",
         desc: "Web App for people to manage their timesheets.",
         status: "in process",
@@ -89,7 +89,7 @@ let projects = [
         id: null,
         title: "Hotel SHATO",
         icon: "window-sidebar",
-        desc: "Hotel Website built on CodeIgniter",
+        desc: "Web App for Hotel with custom CMS",
         link: "https://github.com/nickparov/Hotel-Website-PHP",
         private: false,
         status: "deployed",
@@ -97,9 +97,9 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "PHD Evaluation System",
+        title: "PHD Evaluation App",
         icon: "window-sidebar",
-        desc: "Application for PHD Students Evaluation.",
+        desc: "Web App for PHD Evaluation Process.",
         link: "https://phd-eval.engr.uic.edu/dgs?page=ControlPanel",
         private: false,
         status: "deployed",
@@ -107,9 +107,9 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Knights Game",
+        title: "Knights Game App",
         icon: "window-sidebar",
-        desc: "Web Online Game built on NodeJS/SQLite, no frameworks used except (Express.js).",
+        desc: "Web Online Card Based Game",
         link: "https://knight-app-backend-3.herokuapp.com/",
         private: false,
         status: "deployed",
@@ -117,9 +117,9 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Chicago Stations Visualization",
+        title: "Chicago Stations App",
         icon: "window-sidebar",
-        desc: "Parsing Script / Graph Respresentation of Public Dataset",
+        desc: "Rich Graph Respresentation and Parsing script of Public Chicago Dataset",
         link: "https://nickparov.github.io/cs424-doc-website/project2.html",
         private: false,
         status: "deployed",
@@ -127,9 +127,9 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "ChatBot Service",
+        title: "Chat Bot Service",
         icon: "window-sidebar",
-        desc: "ChatBot service that provides users to directly interact with their customers.",
+        desc: "Chat Bot service that provides users to directly interact with their customers.",
         link: null,
         private: false,
         status: "in process",
@@ -139,7 +139,7 @@ let projects = [
         id: null,
         title: "DB Export Module",
         icon: "code-slash",
-        desc: "Laravel DB Excel export module",
+        desc: "Laravel DB Excel export module (solution-specific)",
         link: null,
         private: true,
         status: "deployed",
@@ -149,7 +149,7 @@ let projects = [
         id: null,
         title: "JS Admin Framework",
         icon: "code-slash",
-        desc: "Built for Admin Panel Side of Web Application",
+        desc: "Built for Admin Panel Side of PHDEval Web App",
         link: null,
         private: true,
         status: "deployed",
@@ -167,9 +167,9 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Matrices Visualization",
+        title: "Matrices Visualization App",
         icon: "window-sidebar",
-        desc: "Visualizing tool for matrix transformation (GROUP).",
+        desc: "Visualizing tool for matrix transformation.",
         link: "https://volodymyrvakhniuk.github.io/Linear-Transformation/",
         private: false,
         status: "deployed",
@@ -177,7 +177,7 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Pathways Project.",
+        title: "'Pathways' Mobile App",
         icon: "window-sidebar",
         desc: "Mobile app built using ReactNative. LinkedIn like app.",
         link: "https://github.com/nickparov/pathways-project-mobile",
@@ -192,14 +192,14 @@ let projects = [
         desc: "Web Based Building Park Game (GROUP).",
         link: "https://national-park-builder.herokuapp.com/",
         private: false,
-        status: "deployed",
+        status: "on pause",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Seaman Air Company",
+        title: "Company HEAT landing",
         icon: "window-sidebar",
-        desc: "Air Ticket Selling Company Web App.",
+        desc: "Air Ticket Selling Company landing.",
         link: "http://seaman-air-tickets.aviapromo.com.ua/",
         private: false,
         status: "deployed",
@@ -241,6 +241,14 @@ const onLoad = {
 
             if (props.private) {
                 badgeElems.push(["badge bg-secondary", "private"]);
+            }
+
+            if (status.includes("on pause")) {
+                badgeElems.push(["badge bg-secondary", "on pause"]);
+            }
+
+            if(status.includes("on pause") || props.private === true) {
+                boxClasses.push("disabled-project-box")
             }
 
             if (!link) {

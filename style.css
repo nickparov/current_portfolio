@@ -11,6 +11,11 @@ body {
     background-color: white;
 }
 
+html body .disabled-project-box {
+    background-color: #e2e2e2;
+    cursor: not-allowed;
+}
+
 .left-def-padding {
     padding-left: 60px;
 }
