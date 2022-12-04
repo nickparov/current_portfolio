@@ -135,6 +135,16 @@ let projects = [
         status: "in process",
     },
     {
+        category: CATEGORIES.SOFTWARE,
+        id: null,
+        title: "PNR Converter App",
+        icon: "window-sidebar",
+        desc: "Web App Converter (PNR to Human Readable Text).",
+        link: "https://nickparov.github.io/PRN_heat/",
+        private: false,
+        status: "deployed",
+    },
+    {
         category: CATEGORIES.CODE,
         id: null,
         title: "DB Export Module",
