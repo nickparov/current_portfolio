@@ -131,7 +131,7 @@ let projects = [
         icon: "window-sidebar",
         desc: "Chat Bot service that provides users to directly interact with their customers.",
         link: null,
-        private: false,
+        private: true,
         status: "in process",
     },
     {
