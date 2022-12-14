@@ -67,6 +67,16 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
+        title: "Company HEAT landing",
+        icon: "window-sidebar",
+        desc: "Air Ticket Selling Company landing.",
+        link: "http://seaman-air-tickets.aviapromo.com.ua/",
+        private: false,
+        status: "deployed",
+    },
+    {
+        category: CATEGORIES.SOFTWARE,
+        id: null,
         title: "Company HEAT",
         icon: "window-sidebar",
         desc: "Web App for Air Ticket Selling Company.",
@@ -83,6 +93,16 @@ let projects = [
         status: "in process",
         link: "https://github.com/nickparov/timesheet-manager",
         private: false,
+    },
+    {
+        category: CATEGORIES.SOFTWARE,
+        id: null,
+        title: "PNR Converter App",
+        icon: "window-sidebar",
+        desc: "Web App Converter (PNR to Human Readable Text).",
+        link: "https://nickparov.github.io/PRN_heat/",
+        private: false,
+        status: "deployed",
     },
     {
         category: CATEGORIES.SOFTWARE,
@@ -133,16 +153,6 @@ let projects = [
         link: null,
         private: true,
         status: "in process",
-    },
-    {
-        category: CATEGORIES.SOFTWARE,
-        id: null,
-        title: "PNR Converter App",
-        icon: "window-sidebar",
-        desc: "Web App Converter (PNR to Human Readable Text).",
-        link: "https://nickparov.github.io/PRN_heat/",
-        private: false,
-        status: "deployed",
     },
     {
         category: CATEGORIES.CODE,
@@ -200,20 +210,10 @@ let projects = [
         title: "Building Based Web Game",
         icon: "window-sidebar",
         desc: "Web Based Building Park Game (GROUP).",
-        link: "https://national-park-builder.herokuapp.com/",
+        link: null,
         private: false,
         status: "on pause",
-    },
-    {
-        category: CATEGORIES.SOFTWARE,
-        id: null,
-        title: "Company HEAT landing",
-        icon: "window-sidebar",
-        desc: "Air Ticket Selling Company landing.",
-        link: "http://seaman-air-tickets.aviapromo.com.ua/",
-        private: false,
-        status: "deployed",
-    },
+    }
 ];
 
 projects = projects.map((el, index) => {
@@ -364,7 +364,7 @@ const onLoad = {
             });
         });
     },
-    commonHandlers: () => {
+    ignore_commonHandlers: () => {
         // Arrow Handler
         const doContentBoxElem = document.getElementById(
             "content-categories-box"
@@ -386,8 +386,8 @@ const onLoad = {
 document.addEventListener("DOMContentLoaded", function () {
     debug("Setup start...");
     Object.keys(onLoad).forEach((_key) => {
-        // debug
-        debug(_key);
+        console.log("HEllo terjehtker");
+        if(_key.includes("ignore")) return;
         // exec func
         onLoad[_key]();
     });
