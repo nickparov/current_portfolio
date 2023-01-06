@@ -132,7 +132,7 @@ let projects = [
         desc: "Web Online Card Based Game",
         link: "https://knight-app-backend-3.herokuapp.com/",
         private: false,
-        status: "deployed",
+        status: "on pause",
     },
     {
         category: CATEGORIES.SOFTWARE,
