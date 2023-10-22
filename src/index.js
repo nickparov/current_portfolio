@@ -378,7 +378,6 @@ const onLoad = {
 document.addEventListener("DOMContentLoaded", function () {
     debug("Setup start...");
     Object.keys(onLoad).forEach((_key) => {
-        console.log("HEllo terjehtker");
         if (_key.includes("ignore")) return;
         // exec func
         onLoad[_key]();

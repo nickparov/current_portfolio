@@ -71,7 +71,7 @@ html body .disabled-project-box {
 }
 
 #mainImage {
-    margin-top: 35px;
+    margin-top: 85px;
     height: 550px;
 }
 
@@ -312,6 +312,9 @@ span.undeline {
     background-color: #2d62a8;
     min-height: 210px;
     color: white;
+    -webkit-box-shadow: 0px 40px 79px -47px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 40px 79px -47px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 40px 79px -47px rgba(0, 0, 0, 0.75);
 }
 
 .content-category-legend p {
