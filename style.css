@@ -11,7 +11,6 @@ body {
     background-color: white;
 }
 
-
 html body .disabled-project-box:hover {
     cursor: not-allowed !important;
     box-shadow: none !important;
@@ -22,7 +21,6 @@ html body .disabled-project-box {
     background-color: #e2e2e2;
     cursor: not-allowed;
 }
-
 
 .left-def-padding {
     padding-left: 60px;
@@ -64,8 +62,17 @@ html body .disabled-project-box {
     }
 }
 
+/* old color */
+/* #86abdb */
+
 .btn-custom-mine {
-    background-color: #fff5d3 !important;
+    background-color: #86abdb !important;
+    color: white;
+}
+
+#mainImage {
+    margin-top: 35px;
+    height: 550px;
 }
 
 /* .content-category-option:hover, .content-category-option.selected {
@@ -74,7 +81,8 @@ html body .disabled-project-box {
 } */
 
 .btn-custom-mine:hover {
-    background-color: #ffeca5 !important;
+    background-color: #3c7dd2 !important;
+    color: white;
 }
 
 #image-background-circle {
@@ -85,13 +93,6 @@ html body .disabled-project-box {
     border-radius: 50%;
     width: 350px;
     height: 350px;
-}
-
-#dogImg {
-    position: absolute;
-    top: 160px;
-    right: 300px;
-    height: 420px;
 }
 
 .message-box {
@@ -133,7 +134,7 @@ span.undeline {
 
 .single-project-box {
     /* fcf8e9 */
-    background-color: #fff5d3;
+    background-color: #86abdb;
     /* border: 2px solid #ffeca5; */
     /* height: 180px; */
     padding: 10px;
@@ -288,7 +289,7 @@ span.undeline {
     padding: 25px !important;
     border: none !important;
     text-decoration: none;
-    color: black;
+    color: white;
 
     font-weight: bold;
 
@@ -296,20 +297,21 @@ span.undeline {
 }
 
 .content-category-option:hover {
-    /* background-color:#fff5d3; */
-    background-color: #fff5d3;
+    /* background-color:#86abdb; */
+    background-color: #86abdb;
 }
 
 .content-category-option.selected {
     /* background-color: #ffeca5; */
-    background-color: #fff5d3;
+    background-color: #86abdb;
 }
 
 .content-category-legend > div {
     /* background-color:#ffeca5; */
-    background-color: #fff5d3;
+    border-radius: 5px;
+    background-color: #2d62a8;
     min-height: 210px;
-    color: black;
+    color: white;
 }
 
 .content-category-legend p {
@@ -335,6 +337,14 @@ span.undeline {
 
 .color-main-green {
     color: rgb(25, 135, 84);
+}
+
+.color-main-blue {
+    color: #86abdb;
+}
+
+.color-main-blue:hover {
+    color: #3c7dd2;
 }
 
 /* link */

@@ -1,48 +1,48 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import '../modal.css';
-import '../style.css';
+import "../modal.css";
+import "../style.css";
 
-import Resume from '../Resume v1.pdf';
-import DogImg from '../ava.png';
-
+import Resume from "../Resume v1.pdf";
+import main from "../main.jpg";
 
 // assets setup
 document.getElementById("resumeDownloadBtn").href = Resume;
-document.getElementById("dogImg").src = DogImg;
+document.getElementById("mainImage").src = main;
+// document.getElementById("mainImage").src = mainImage;
 
 // animations
-AOS.init({delay: 100});
+AOS.init({ delay: 100 });
 
-const ModalTools = (function () {
-    function populate(title, desc, _private, link = null) {
-        // change title
-        document.querySelector(
-            "#modal-single-project .modal__title"
-        ).textContent = title;
-        // change desc
-        document.querySelector("#modal-single-project .alert").textContent =
-            desc;
-        // change link
-        const linkNode = document.querySelector(
-            "#modal-single-project .link__box .link"
-        );
-        if (link) {
-            linkNode.innerHTML = `<span>Visit link</span> <i style="font-size: 1.2em;" class="bi bi-link-45deg"></i>`;
-            linkNode.href = link;
-        } else {
-            linkNode.innerHTML = `<span>${
-                _private ? "Private" : "No Link"
-            }</span>`;
-            linkNode.href = `#`;
-        }
-    }
+// const ModalTools = (function () {
+//     function populate(title, desc, _private, link = null) {
+//         // change title
+//         document.querySelector(
+//             "#modal-single-project .modal__title"
+//         ).textContent = title;
+//         // change desc
+//         document.querySelector("#modal-single-project .alert").textContent =
+//             desc;
+//         // change link
+//         const linkNode = document.querySelector(
+//             "#modal-single-project .link__box .link"
+//         );
+//         if (link) {
+//             linkNode.innerHTML = `<span>Visit link</span> <i style="font-size: 1.2em;" class="bi bi-link-45deg"></i>`;
+//             linkNode.href = link;
+//         } else {
+//             linkNode.innerHTML = `<span>${
+//                 _private ? "Private" : "No Link"
+//             }</span>`;
+//             linkNode.href = `#`;
+//         }
+//     }
 
-    return {
-        populate,
-    };
-})();
+//     return {
+//         populate,
+//     };
+// })();
 
 let DEBUG_ON = true;
 const debug = (msg, ...args) => {
@@ -213,7 +213,7 @@ let projects = [
         link: null,
         private: false,
         status: "on pause",
-    }
+    },
 ];
 
 projects = projects.map((el, index) => {
@@ -229,15 +229,7 @@ const onLoad = {
     },
     populateWorks: () => {
         function __singleProjHTMl(props) {
-            const {
-                title,
-                icon,
-                desc,
-                type,
-                status,
-                id,
-                link,
-            } = props;
+            const { title, icon, desc, type, status, id, link } = props;
             const badgeElems = [];
             const boxClasses = ["single-project-box"];
 
@@ -257,8 +249,8 @@ const onLoad = {
                 badgeElems.push(["badge bg-secondary", "on pause"]);
             }
 
-            if(status.includes("on pause") || props.private === true) {
-                boxClasses.push("disabled-project-box")
+            if (status.includes("on pause") || props.private === true) {
+                boxClasses.push("disabled-project-box");
             }
 
             if (!link) {
@@ -387,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
     debug("Setup start...");
     Object.keys(onLoad).forEach((_key) => {
         console.log("HEllo terjehtker");
-        if(_key.includes("ignore")) return;
+        if (_key.includes("ignore")) return;
         // exec func
         onLoad[_key]();
     });
