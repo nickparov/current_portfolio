@@ -1,48 +1,50 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import '../modal.css';
-import '../style.css';
+import "../modal.css";
+import "../style.css";
 
-import Resume from '../Resume v1.pdf';
-import DogImg from '../ava.png';
-
+import Resume from "../Resume v1.pdf";
+import main from "../main.jpg";
+import arrowPng from "../arrow.png";
 
 // assets setup
 document.getElementById("resumeDownloadBtn").href = Resume;
-document.getElementById("dogImg").src = DogImg;
+document.getElementById("mainImage").src = main;
+document.getElementById("arrowPng").src = arrowPng;
+// document.getElementById("mainImage").src = mainImage;
 
 // animations
-AOS.init({delay: 100});
+AOS.init({ delay: 100 });
 
-const ModalTools = (function () {
-    function populate(title, desc, _private, link = null) {
-        // change title
-        document.querySelector(
-            "#modal-single-project .modal__title"
-        ).textContent = title;
-        // change desc
-        document.querySelector("#modal-single-project .alert").textContent =
-            desc;
-        // change link
-        const linkNode = document.querySelector(
-            "#modal-single-project .link__box .link"
-        );
-        if (link) {
-            linkNode.innerHTML = `<span>Visit link</span> <i style="font-size: 1.2em;" class="bi bi-link-45deg"></i>`;
-            linkNode.href = link;
-        } else {
-            linkNode.innerHTML = `<span>${
-                _private ? "Private" : "No Link"
-            }</span>`;
-            linkNode.href = `#`;
-        }
-    }
+// const ModalTools = (function () {
+//     function populate(title, desc, _private, link = null) {
+//         // change title
+//         document.querySelector(
+//             "#modal-single-project .modal__title"
+//         ).textContent = title;
+//         // change desc
+//         document.querySelector("#modal-single-project .alert").textContent =
+//             desc;
+//         // change link
+//         const linkNode = document.querySelector(
+//             "#modal-single-project .link__box .link"
+//         );
+//         if (link) {
+//             linkNode.innerHTML = `<span>Visit link</span> <i style="font-size: 1.2em;" class="bi bi-link-45deg"></i>`;
+//             linkNode.href = link;
+//         } else {
+//             linkNode.innerHTML = `<span>${
+//                 _private ? "Private" : "No Link"
+//             }</span>`;
+//             linkNode.href = `#`;
+//         }
+//     }
 
-    return {
-        populate,
-    };
-})();
+//     return {
+//         populate,
+//     };
+// })();
 
 let DEBUG_ON = true;
 const debug = (msg, ...args) => {
@@ -67,67 +69,67 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Company HEAT landing",
+        title: "'HEAT' ltd. landing page",
         icon: "window-sidebar",
-        desc: "Air Ticket Selling Company landing.",
+        desc: "Air Ticket Selling Company landing page.",
         link: "http://seaman-air-tickets.aviapromo.com.ua/",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Company HEAT",
+        title: "'HEAT' ltd. Website",
         icon: "window-sidebar",
-        desc: "Web App for Air Ticket Selling Company.",
-        status: "deployed",
+        desc: "Air Ticket Selling Company Website.",
+        status: "",
         link: "http://www.aviapromo.com.ua/",
         private: false,
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Timesheet Manager Service",
-        icon: "window-sidebar",
-        desc: "Web App for people to manage their timesheets.",
-        status: "in process",
-        link: "https://github.com/nickparov/timesheet-manager",
-        private: false,
-    },
-    {
-        category: CATEGORIES.SOFTWARE,
-        id: null,
-        title: "PNR Converter App",
+        title: "PNR Converter Tool",
         icon: "window-sidebar",
         desc: "Web App Converter (PNR to Human Readable Text).",
         link: "https://nickparov.github.io/PRN_heat/",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Hotel SHATO",
+        title: "Hotel Web App",
         icon: "window-sidebar",
         desc: "Web App for Hotel with custom CMS",
         link: "https://github.com/nickparov/Hotel-Website-PHP",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "PHD Evaluation App",
+        title: "PHD Evaluation Web App",
         icon: "window-sidebar",
-        desc: "Web App for PHD Evaluation Process.",
+        desc: "Web App for PHD Evaluation Processes for University staff.",
         link: "https://phd-eval.engr.uic.edu/dgs?page=ControlPanel",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Knights Game App",
+        title: "'Pathways' Mobile App",
+        icon: "phone",
+        desc: "Mobile app built using ReactNative. LinkedIn like app.",
+        link: "https://github.com/nickparov/pathways-project-mobile",
+        private: false,
+        status: "",
+    },
+    {
+        category: CATEGORIES.SOFTWARE,
+        id: null,
+        title: "Knights Web Game",
         icon: "window-sidebar",
         desc: "Web Online Card Based Game",
         link: "https://knight-app-backend-3.herokuapp.com/",
@@ -137,52 +139,32 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Chicago Stations App",
+        title: "Town Stations Data Website",
         icon: "window-sidebar",
         desc: "Rich Graph Respresentation and Parsing script of Public Chicago Dataset",
         link: "https://nickparov.github.io/cs424-doc-website/project2.html",
-        private: false,
-        status: "deployed",
+        private: true,
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Chat Bot Service",
-        icon: "window-sidebar",
-        desc: "Chat Bot service that provides users to directly interact with their customers.",
-        link: null,
-        private: true,
-        status: "in process",
-    },
-    {
-        category: CATEGORIES.CODE,
-        id: null,
-        title: "DB Export Module",
+        title: "DB Export Tool",
         icon: "code-slash",
-        desc: "Laravel DB Excel export module (solution-specific)",
+        desc: "Laravel DB Excel export module",
         link: null,
         private: true,
-        status: "deployed",
+        status: "",
     },
     {
-        category: CATEGORIES.CODE,
+        category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "JS Admin Framework",
+        title: "Custom Tiny JS Framework",
         icon: "code-slash",
         desc: "Built for Admin Panel Side of PHDEval Web App",
         link: null,
         private: true,
-        status: "deployed",
-    },
-    {
-        category: CATEGORIES.CODE,
-        id: null,
-        title: "Redirect Module",
-        icon: "code-slash",
-        desc: "Javascript redirect module.",
-        link: null,
-        private: true,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
@@ -192,28 +174,18 @@ let projects = [
         desc: "Visualizing tool for matrix transformation.",
         link: "https://volodymyrvakhniuk.github.io/Linear-Transformation/",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "'Pathways' Mobile App",
+        title: "Building Web Game",
         icon: "window-sidebar",
-        desc: "Mobile app built using ReactNative. LinkedIn like app.",
-        link: "https://github.com/nickparov/pathways-project-mobile",
-        private: false,
-        status: "deployed",
-    },
-    {
-        category: CATEGORIES.SOFTWARE,
-        id: null,
-        title: "Building Based Web Game",
-        icon: "window-sidebar",
-        desc: "Web Based Building Park Game (GROUP).",
+        desc: "Web Based Building Park Game.",
         link: null,
         private: false,
         status: "on pause",
-    }
+    },
 ];
 
 projects = projects.map((el, index) => {
@@ -229,20 +201,12 @@ const onLoad = {
     },
     populateWorks: () => {
         function __singleProjHTMl(props) {
-            const {
-                title,
-                icon,
-                desc,
-                type,
-                status,
-                id,
-                link,
-            } = props;
+            const { title, icon, desc, type, status, id, link } = props;
             const badgeElems = [];
             const boxClasses = ["single-project-box"];
 
             if (status.includes("deployed")) {
-                badgeElems.push(["badge bg-success", "deployed"]);
+                badgeElems.push(["badge bg-success", ""]);
             }
 
             if (status.includes("in process")) {
@@ -257,8 +221,8 @@ const onLoad = {
                 badgeElems.push(["badge bg-secondary", "on pause"]);
             }
 
-            if(status.includes("on pause") || props.private === true) {
-                boxClasses.push("disabled-project-box")
+            if (status.includes("on pause") || props.private === true) {
+                boxClasses.push("disabled-project-box");
             }
 
             if (!link) {
@@ -301,7 +265,6 @@ const onLoad = {
             : [...projects];
 
         if (projectsToDisplay.length > 0) {
-            console.log(projectsToDisplay);
             projectsToDisplay.forEach((proj) => __popWork(proj));
         }
     },
@@ -310,7 +273,6 @@ const onLoad = {
             if (category.includes("ALL")) return "ALL";
             // which cat?
             let categoryID = category.toUpperCase().substr(1, category.length);
-            console.log(categoryID);
             categoryID =
                 categoryID.split(" ").length > 1
                     ? categoryID.split(" ").join("_")
@@ -358,9 +320,9 @@ const onLoad = {
                     e.currentTarget.getAttribute("data-id")
                 );
                 const proj = projects.find((el) => el.id === projID);
-                const { link } = proj;
+                const { link, private: _private, status } = proj;
 
-                link && redirect(link);
+                link && !_private && status !== "on pause" && redirect(link);
             });
         });
     },
@@ -386,10 +348,9 @@ const onLoad = {
 document.addEventListener("DOMContentLoaded", function () {
     debug("Setup start...");
     Object.keys(onLoad).forEach((_key) => {
-        console.log("HEllo terjehtker");
-        if(_key.includes("ignore")) return;
+        if (_key.includes("ignore")) return;
         // exec func
         onLoad[_key]();
     });
-    debug("Done.");
+    debug("Setup Done...");
 });
