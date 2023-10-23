@@ -12,9 +12,6 @@
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous"
         />
-        <!-- Custom CSS -->
-        <!-- <link rel="stylesheet" href="../style.css" /> -->
-        <!-- <link rel="stylesheet" href="../modal.css" /> -->
 
         <!-- Google tag (gtag.js) -->
         <script
@@ -58,13 +55,18 @@
             href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap"
             rel="stylesheet"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div class="container p-5 main">
             <div
                 id="main-content-box"
                 class="row left-def-padding"
-                style="margin-top: 70px"
             >
                 <div class="col-lg-5 col-md-12 welcome-content">
                     <h1><b>Mykyta Parovyi</b></h1>
@@ -114,13 +116,11 @@
                                     >+1(312)714-75-89</a
                                 ></span
                             >
-                            <span class="d-block mt-1"
-                                >Location: US, Chicago</span
-                            >
                         </p>
                     </div>
                     <div
                         class="mt-4 d-flex justify-content-start align-items-center"
+                        style="position: relative"
                     >
                         <a
                             class="btn btn-custom-mine"
@@ -136,6 +136,11 @@
                             href="../Resume v1.pdf"
                             >CV <i class="bi bi-file-arrow-down"></i
                         ></a>
+                        <img id="arrowPng" />
+                        <p id="arrowText">
+                            For Serious <br />
+                            Folks
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-7" id="dogImageDiv">
@@ -159,7 +164,7 @@
             >
                 <h1 class="text-center"><b>Engineer Showcase</b></h1>
                 <h4 class="text-center mt-1 mb-3">
-                    I have <u>unique</u> experience in all of the following
+                    I have <u>unique</u> experience in the following
                 </h4>
                 <div class="content-categories-box-main mt-3">
                     <div class="row mx-lg-5 px-lg-5">
@@ -171,7 +176,7 @@
                                     class="bi bi-window-sidebar icon-software-bar"
                                 ></i>
                                 <p class="mb-1 text-center">
-                                    Full-Stack Applications
+                                    Full-Stack<br />Applications
                                 </p>
                             </div>
                         </div>
@@ -183,7 +188,7 @@
                                     class="bi bi-people-fill icon-software-bar"
                                 ></i>
                                 <p class="mb-1 text-center">
-                                    Mentorship & Consulting
+                                    Mentorship<br />& Consulting
                                 </p>
                             </div>
                         </div>
@@ -195,7 +200,7 @@
                                     class="bi bi-graph-up-arrow icon-software-bar"
                                 ></i>
                                 <p class="mb-1 text-center">
-                                    Performance Optimizations
+                                    Performance<br />Optimizations
                                 </p>
                             </div>
                         </div>
@@ -206,7 +211,7 @@
                                 <!-- <i class="bi bi-phone icon-software-bar"></i> -->
                                 <i class="bi bi-tools icon-software-bar"></i>
                                 <p class="mb-1 text-center">
-                                    Business specific tools & scripts
+                                    Business specific<br />tools
                                 </p>
                             </div>
                         </div>
@@ -251,9 +256,9 @@
                     <h1 class="text-center">
                         <b>Technologies?</b>
                     </h1>
-                    <h4 class="text-center">
+                    <h5 class="text-center">
                         Depends on the project domain and complexity.
-                    </h4>
+                    </h5>
                     <div
                         class="d-flex justify-content-center flex-row"
                         style="flex-wrap: wrap"
@@ -266,7 +271,9 @@
                         <a class="mt-2 mx-1 btn btn-custom-mine"> Needs </a>
                         <a class="mt-2 mx-1 btn btn-custom-mine"> And </a>
                         <a class="mt-2 mx-1 btn btn-custom-mine"> React </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> JavaScript </a>
+                        <a class="mt-2 mx-1 btn btn-custom-mine">
+                            JavaScript
+                        </a>
                         <a class="mt-2 mx-1 btn btn-custom-mine"> NodeJS </a>
                     </div>
                 </div>
@@ -278,15 +285,15 @@
                 style="margin-top: 160px; margin-bottom: 160px"
                 data-aos="fade-up"
             >
-                <h1 class="text-center pb-2"><b>My Projects & Works</b></h1>
-                <h4 class="text-center pb-5">
-                    <u>Click</u> on the project box to see details.
-                </h4>
+                <h1 class="text-center pb-2"><b>Projects & Works</b></h1>
+                <h5 class="text-center pb-5">
+                    These are my <u>publicly</u> accessible projects <br />and a couple of private ones
+                </h5>
                 <div id="projects-list" class="row"></div>
                 <div class="proj-details_section text-center pt-4">
                     <p>
-                        For all the details regarding the projects above contact
-                        me. *
+                        * For other interesting Things, Projects and Tools that
+                        I ever created, contact me. *
                     </p>
                 </div>
             </div>
@@ -299,7 +306,7 @@
             >
                 <div class="row">
                     <div class="col-lg-5 border p-5">
-                        <h1 class=""><b>Got a Project?</b></h1>
+                        <h1 class=""><b>Another Project?</b></h1>
                         <h4>Let me take care of it.</h4>
                         <a
                             class="mt-2 btn btn-custom-mine"
@@ -309,7 +316,7 @@
                         </a>
                     </div>
                     <div class="col-lg-7 p-5">
-                        <h1 class=""><b>Contact me in a moment?</b></h1>
+                        <h1 class=""><b>Where am I?</b></h1>
                         <h4>Message me and get a reply in no time.</h4>
                         <a
                             class="mt-2 btn btn-custom-mine"

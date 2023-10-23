@@ -6,10 +6,12 @@ import "../style.css";
 
 import Resume from "../Resume v1.pdf";
 import main from "../main.jpg";
+import arrowPng from "../arrow.png";
 
 // assets setup
 document.getElementById("resumeDownloadBtn").href = Resume;
 document.getElementById("mainImage").src = main;
+document.getElementById("arrowPng").src = arrowPng;
 // document.getElementById("mainImage").src = mainImage;
 
 // animations
@@ -67,67 +69,67 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Company HEAT landing",
+        title: "'HEAT' ltd. landing page",
         icon: "window-sidebar",
-        desc: "Air Ticket Selling Company landing.",
+        desc: "Air Ticket Selling Company landing page.",
         link: "http://seaman-air-tickets.aviapromo.com.ua/",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Company HEAT",
+        title: "'HEAT' ltd. Website",
         icon: "window-sidebar",
-        desc: "Web App for Air Ticket Selling Company.",
-        status: "deployed",
+        desc: "Air Ticket Selling Company Website.",
+        status: "",
         link: "http://www.aviapromo.com.ua/",
         private: false,
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Timesheet Manager Service",
-        icon: "window-sidebar",
-        desc: "Web App for people to manage their timesheets.",
-        status: "in process",
-        link: "https://github.com/nickparov/timesheet-manager",
-        private: false,
-    },
-    {
-        category: CATEGORIES.SOFTWARE,
-        id: null,
-        title: "PNR Converter App",
+        title: "PNR Converter Tool",
         icon: "window-sidebar",
         desc: "Web App Converter (PNR to Human Readable Text).",
         link: "https://nickparov.github.io/PRN_heat/",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Hotel SHATO",
+        title: "Hotel Web App",
         icon: "window-sidebar",
         desc: "Web App for Hotel with custom CMS",
         link: "https://github.com/nickparov/Hotel-Website-PHP",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "PHD Evaluation App",
+        title: "PHD Evaluation Web App",
         icon: "window-sidebar",
-        desc: "Web App for PHD Evaluation Process.",
+        desc: "Web App for PHD Evaluation Processes for University staff.",
         link: "https://phd-eval.engr.uic.edu/dgs?page=ControlPanel",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Knights Game App",
+        title: "'Pathways' Mobile App",
+        icon: "phone",
+        desc: "Mobile app built using ReactNative. LinkedIn like app.",
+        link: "https://github.com/nickparov/pathways-project-mobile",
+        private: false,
+        status: "",
+    },
+    {
+        category: CATEGORIES.SOFTWARE,
+        id: null,
+        title: "Knights Web Game",
         icon: "window-sidebar",
         desc: "Web Online Card Based Game",
         link: "https://knight-app-backend-3.herokuapp.com/",
@@ -137,52 +139,32 @@ let projects = [
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Chicago Stations App",
+        title: "Town Stations Data Website",
         icon: "window-sidebar",
         desc: "Rich Graph Respresentation and Parsing script of Public Chicago Dataset",
         link: "https://nickparov.github.io/cs424-doc-website/project2.html",
-        private: false,
-        status: "deployed",
+        private: true,
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "Chat Bot Service",
-        icon: "window-sidebar",
-        desc: "Chat Bot service that provides users to directly interact with their customers.",
-        link: null,
-        private: true,
-        status: "in process",
-    },
-    {
-        category: CATEGORIES.CODE,
-        id: null,
-        title: "DB Export Module",
+        title: "DB Export Tool",
         icon: "code-slash",
-        desc: "Laravel DB Excel export module (solution-specific)",
+        desc: "Laravel DB Excel export module",
         link: null,
         private: true,
-        status: "deployed",
+        status: "",
     },
     {
-        category: CATEGORIES.CODE,
+        category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "JS Admin Framework",
+        title: "Custom Tiny JS Framework",
         icon: "code-slash",
         desc: "Built for Admin Panel Side of PHDEval Web App",
         link: null,
         private: true,
-        status: "deployed",
-    },
-    {
-        category: CATEGORIES.CODE,
-        id: null,
-        title: "Redirect Module",
-        icon: "code-slash",
-        desc: "Javascript redirect module.",
-        link: null,
-        private: true,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
@@ -192,24 +174,14 @@ let projects = [
         desc: "Visualizing tool for matrix transformation.",
         link: "https://volodymyrvakhniuk.github.io/Linear-Transformation/",
         private: false,
-        status: "deployed",
+        status: "",
     },
     {
         category: CATEGORIES.SOFTWARE,
         id: null,
-        title: "'Pathways' Mobile App",
+        title: "Building Web Game",
         icon: "window-sidebar",
-        desc: "Mobile app built using ReactNative. LinkedIn like app.",
-        link: "https://github.com/nickparov/pathways-project-mobile",
-        private: false,
-        status: "deployed",
-    },
-    {
-        category: CATEGORIES.SOFTWARE,
-        id: null,
-        title: "Building Based Web Game",
-        icon: "window-sidebar",
-        desc: "Web Based Building Park Game (GROUP).",
+        desc: "Web Based Building Park Game.",
         link: null,
         private: false,
         status: "on pause",
@@ -234,7 +206,7 @@ const onLoad = {
             const boxClasses = ["single-project-box"];
 
             if (status.includes("deployed")) {
-                badgeElems.push(["badge bg-success", "deployed"]);
+                badgeElems.push(["badge bg-success", ""]);
             }
 
             if (status.includes("in process")) {
@@ -293,7 +265,6 @@ const onLoad = {
             : [...projects];
 
         if (projectsToDisplay.length > 0) {
-            console.log(projectsToDisplay);
             projectsToDisplay.forEach((proj) => __popWork(proj));
         }
     },
@@ -302,7 +273,6 @@ const onLoad = {
             if (category.includes("ALL")) return "ALL";
             // which cat?
             let categoryID = category.toUpperCase().substr(1, category.length);
-            console.log(categoryID);
             categoryID =
                 categoryID.split(" ").length > 1
                     ? categoryID.split(" ").join("_")
@@ -350,9 +320,9 @@ const onLoad = {
                     e.currentTarget.getAttribute("data-id")
                 );
                 const proj = projects.find((el) => el.id === projID);
-                const { link } = proj;
+                const { link, private: _private, status } = proj;
 
-                link && redirect(link);
+                link && !_private && status !== "on pause" && redirect(link);
             });
         });
     },
@@ -382,5 +352,5 @@ document.addEventListener("DOMContentLoaded", function () {
         // exec func
         onLoad[_key]();
     });
-    debug("Done.");
+    debug("Setup Done...");
 });
