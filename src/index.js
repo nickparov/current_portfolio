@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import "../modal.css";
 import "../style.css";
 
-import Resume from "../Resume v1.pdf";
+import Resume from "../CV.pdf";
 import main from "../main.jpg";
 import arrowPng from "../arrow.png";
 
