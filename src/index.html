@@ -47,8 +47,9 @@
         <!-- FontAwesome -->
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -64,8 +65,11 @@
         />
     </head>
     <body>
-        <div class="container p-5 main">
-            <div id="main-content-box" class="row left-def-padding">
+        <div class="container px-5 main">
+            <div
+                id="main-content-box"
+                class="row left-def-padding d-flex justify-content-center align-items-center"
+            >
                 <div class="col-lg-5 col-md-12 welcome-content">
                     <h1><b>Mykyta Parovyi</b></h1>
                     <h3><b>Software Engineer</b></h3>
@@ -174,7 +178,7 @@
                                     class="bi bi-window-sidebar icon-software-bar"
                                 ></i>
                                 <p class="mb-1 text-center">
-                                    Full-Stack<br />Applications
+                                    Web/Mobile<br />Applications
                                 </p>
                             </div>
                         </div>
@@ -186,7 +190,7 @@
                                     class="bi bi-people-fill icon-software-bar"
                                 ></i>
                                 <p class="mb-1 text-center">
-                                    Mentorship<br />& Consulting
+                                    Mentorship<br />and Consulting
                                 </p>
                             </div>
                         </div>
@@ -198,7 +202,7 @@
                                     class="bi bi-graph-up-arrow icon-software-bar"
                                 ></i>
                                 <p class="mb-1 text-center">
-                                    Performance<br />Optimizations
+                                    UI/UX driven<br />Performance Optimizations
                                 </p>
                             </div>
                         </div>
@@ -209,7 +213,7 @@
                                 <!-- <i class="bi bi-phone icon-software-bar"></i> -->
                                 <i class="bi bi-tools icon-software-bar"></i>
                                 <p class="mb-1 text-center">
-                                    Business specific<br />tools
+                                    Tailored Business<br />Solutions
                                 </p>
                             </div>
                         </div>
@@ -249,37 +253,49 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div data-aos="fade-up" class="col-lg-12 border p-5">
+            <div class="row" id="technologies-box">
+                <div data-aos="fade-up" class="col-lg-12 border p-4">
                     <h1 class="text-center">
                         <b>Technologies?</b>
                     </h1>
-                    <h5 class="text-center">
+                    <h5 class="text-center pb-2 subtext">
                         Depends on the project domain and complexity.
                     </h5>
                     <div
-                        class="d-flex justify-content-center flex-row"
+                        id="technologies-box-items-box"
+                        class="d-flex justify-content-center align-items-center flex-row"
                         style="flex-wrap: wrap"
                     >
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> Whatever </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> Business </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> Entity </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> Or </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> Client </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> Needs </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> And </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> React </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine">
+                        <a
+                            class="mx-1 btn btn-custom-mine custom-btn-flex-centered"
+                            ><i
+                                class="custom-small-tech-icon fab fa-react react-icon"
+                            ></i>
+                            React
+                        </a>
+                        <a
+                            class="mx-1 btn btn-custom-mine custom-btn-flex-centered"
+                        >
+                            <i
+                                class="custom-small-tech-icon fab fa-brands fa-js"
+                            ></i>
                             JavaScript
                         </a>
-                        <a class="mt-2 mx-1 btn btn-custom-mine"> NodeJS </a>
+                        <a
+                            class="mx-1 btn btn-custom-mine custom-btn-flex-centered"
+                        >
+                            <i
+                                class="custom-small-tech-icon fa-brands fa-node-js"
+                            ></i>
+                            NodeJS
+                        </a>
                     </div>
                 </div>
             </div>
 
             <div
                 id="works-content-box"
-                class="row def-padding"
+                class="row def-padding d-flex justify-content-center align-items-center"
                 style="margin-top: 160px; margin-bottom: 160px"
                 data-aos="fade-up"
             >
@@ -306,9 +322,13 @@
                 data-aos="fade-up"
             >
                 <div class="row">
-                    <div class="col-lg-5 border p-5">
-                        <h1 class=""><b>Another Project?</b></h1>
-                        <h4>Let me take care of it.</h4>
+                    <div class="col-lg-5 border p-5" id="action-box-1">
+                        <h1 class="action-box-title">
+                            <b>Have A Project?</b>
+                        </h1>
+                        <h4 class="action-box-subtext">
+                            Let me take care of it.
+                        </h4>
                         <a
                             class="mt-2 btn btn-custom-mine"
                             href="mailto:nickparov@gmail.com"
@@ -317,8 +337,10 @@
                         </a>
                     </div>
                     <div class="col-lg-7 p-5">
-                        <h1 class=""><b>Where am I?</b></h1>
-                        <h4>Message me and get a reply in no time.</h4>
+                        <h1 class="action-box-title"><b>Contact Me</b></h1>
+                        <h4 class="action-box-subtext">
+                            Message me and get a reply in no time.
+                        </h4>
                         <a
                             class="mt-2 btn btn-custom-mine"
                             href="mailto:nickparov@gmail.com"

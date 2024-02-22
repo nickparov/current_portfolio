@@ -1,50 +1,33 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import "../modal.css";
 import "../style.css";
 
 import Resume from "../CV.pdf";
 import main from "../main.jpg";
 import arrowPng from "../arrow.png";
+import {
+    ___singeProjectHandle,
+    ___singleProjectDescription,
+    __singleProjHTMl,
+    __popWork,
+    renderProjects,
+    addProjEventListeners,
+} from "./projectsUI";
+
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+    );
+}
 
 // assets setup
 document.getElementById("resumeDownloadBtn").href = Resume;
 document.getElementById("mainImage").src = main;
 document.getElementById("arrowPng").src = arrowPng;
-// document.getElementById("mainImage").src = mainImage;
 
 // animations
 AOS.init({ delay: 100 });
-
-// const ModalTools = (function () {
-//     function populate(title, desc, _private, link = null) {
-//         // change title
-//         document.querySelector(
-//             "#modal-single-project .modal__title"
-//         ).textContent = title;
-//         // change desc
-//         document.querySelector("#modal-single-project .alert").textContent =
-//             desc;
-//         // change link
-//         const linkNode = document.querySelector(
-//             "#modal-single-project .link__box .link"
-//         );
-//         if (link) {
-//             linkNode.innerHTML = `<span>Visit link</span> <i style="font-size: 1.2em;" class="bi bi-link-45deg"></i>`;
-//             linkNode.href = link;
-//         } else {
-//             linkNode.innerHTML = `<span>${
-//                 _private ? "Private" : "No Link"
-//             }</span>`;
-//             linkNode.href = `#`;
-//         }
-//     }
-
-//     return {
-//         populate,
-//     };
-// })();
 
 let DEBUG_ON = true;
 const debug = (msg, ...args) => {
@@ -60,7 +43,6 @@ const CATEGORIES = {
     SOFTWARE: "SOFTWARE",
     CODE: "CODE",
     MOBILE_APPS: "MOBILE_APPS",
-    // DESKTOP_APPS: "DESKTOP_APPS",
 };
 
 let selectedCategory = CATEGORIES.SOFTWARE;
@@ -68,8 +50,9 @@ let selectedCategory = CATEGORIES.SOFTWARE;
 let projects = [
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "'HEAT' ltd. landing page",
+        title: "'HEAT' ltd.",
         icon: "window-sidebar",
         desc: "Air Ticket Selling Company landing page.",
         link: "http://seaman-air-tickets.aviapromo.com.ua/",
@@ -78,8 +61,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: true,
         id: null,
-        title: "'HEAT' ltd. Website",
+        title: "'HEAT' ltd.",
         icon: "window-sidebar",
         desc: "Air Ticket Selling Company Website.",
         status: "",
@@ -88,8 +72,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "PNR Converter Tool",
+        title: "PNR Converter",
         icon: "window-sidebar",
         desc: "Web App Converter (PNR to Human Readable Text).",
         link: "https://nickparov.github.io/PRN_heat/",
@@ -98,8 +83,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "Hotel Web App",
+        title: "Hotel",
         icon: "window-sidebar",
         desc: "Web App for Hotel with custom CMS",
         link: "https://github.com/nickparov/Hotel-Website-PHP",
@@ -108,8 +94,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "PHD Evaluation Web App",
+        title: "PHD Evaluation",
         icon: "window-sidebar",
         desc: "Web App for PHD Evaluation Processes for University staff.",
         link: "https://phd-eval.engr.uic.edu/dgs?page=ControlPanel",
@@ -118,8 +105,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "'Pathways' Mobile App",
+        title: "'Pathways'",
         icon: "phone",
         desc: "Mobile app built using ReactNative. LinkedIn like app.",
         link: "https://github.com/nickparov/pathways-project-mobile",
@@ -128,8 +116,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "Knights Web Game",
+        title: "Knights Game",
         icon: "window-sidebar",
         desc: "Web Online Card Based Game",
         link: "https://knight-app-backend-3.herokuapp.com/",
@@ -138,8 +127,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "Town Stations Data Website",
+        title: "Town Data Visualization",
         icon: "window-sidebar",
         desc: "Rich Graph Respresentation and Parsing script of Public Chicago Dataset",
         link: "https://nickparov.github.io/cs424-doc-website/project2.html",
@@ -148,8 +138,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "DB Export Tool",
+        title: "DB Export",
         icon: "code-slash",
         desc: "Laravel DB Excel export module",
         link: null,
@@ -158,8 +149,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "Custom Tiny JS Framework",
+        title: "Custom JS Framework",
         icon: "code-slash",
         desc: "Built for Admin Panel Side of PHDEval Web App",
         link: null,
@@ -168,8 +160,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "Matrices Visualization App",
+        title: "Matrices Visualization",
         icon: "window-sidebar",
         desc: "Visualizing tool for matrix transformation.",
         link: "https://volodymyrvakhniuk.github.io/Linear-Transformation/",
@@ -178,8 +171,9 @@ let projects = [
     },
     {
         category: CATEGORIES.SOFTWARE,
+        isOpen: false,
         id: null,
-        title: "Building Web Game",
+        title: "Building Game",
         icon: "window-sidebar",
         desc: "Web Based Building Park Game.",
         link: null,
@@ -193,80 +187,9 @@ projects = projects.map((el, index) => {
 });
 
 const onLoad = {
-    welcomeContentHeight: () => {
-        // setup the welcome content height
-        document.getElementById("main-content-box").style.height = `${
-            window.innerHeight - 300
-        }px`;
-    },
     populateWorks: () => {
-        function __singleProjHTMl(props) {
-            const { title, icon, desc, type, status, id, link } = props;
-            const badgeElems = [];
-            const boxClasses = ["single-project-box"];
-
-            if (status.includes("deployed")) {
-                badgeElems.push(["badge bg-success", ""]);
-            }
-
-            if (status.includes("in process")) {
-                badgeElems.push(["badge bg-warning", "in process"]);
-            }
-
-            if (props.private) {
-                badgeElems.push(["badge bg-secondary", "private"]);
-            }
-
-            if (status.includes("on pause")) {
-                badgeElems.push(["badge bg-secondary", "on pause"]);
-            }
-
-            if (status.includes("on pause") || props.private === true) {
-                boxClasses.push("disabled-project-box");
-            }
-
-            if (!link) {
-                boxClasses.push("link-empty");
-            }
-
-            function getSingleBadgeHTML([badgeClasses, status]) {
-                return `<span class="description-small ${badgeClasses}">${status}</span>`;
-            }
-
-            return `<div class="project-box-parent col-lg-6 col-md-12 col-sm-12">
-                        <div class="${boxClasses.join(
-                            " "
-                        )}" data-title="${title}" data-id="${id}">
-                            <i class="background-white-icon bi bi-${icon}"></i>
-                            <div class="project-description">
-                                <p>${title}</p>
-                                <span class="description-small">${desc}</span><br>
-                                ${badgeElems
-                                    .map((el) => getSingleBadgeHTML(el))
-                                    .join(" ")}
-                            </div>
-                        </div>
-                    </div>`;
-        }
-
-        // remove els
-        document
-            .querySelectorAll(".project-box-parent")
-            .forEach((el) => el.remove());
-
-        function __popWork(proj) {
-            document
-                .getElementById("projects-list")
-                .insertAdjacentHTML("beforeend", __singleProjHTMl(proj));
-        }
-
-        const projectsToDisplay = selectedCategory
-            ? projects.filter(({ category }) => selectedCategory == category)
-            : [...projects];
-
-        if (projectsToDisplay.length > 0) {
-            projectsToDisplay.forEach((proj) => __popWork(proj));
-        }
+        // render all projects elements
+        renderProjects(projects, selectedCategory);
     },
     projCategoryHandlers: () => {
         function txtToCatID(category) {
@@ -311,21 +234,6 @@ const onLoad = {
         // remove class p-5
         // add class p-1
     },
-    singleProjModalHandlers: () => {
-        document.querySelectorAll(".single-project-box").forEach((el) => {
-            const redirect = (l) => window.open(l, "_blank");
-
-            el.addEventListener("click", (e) => {
-                const projID = parseInt(
-                    e.currentTarget.getAttribute("data-id")
-                );
-                const proj = projects.find((el) => el.id === projID);
-                const { link, private: _private, status } = proj;
-
-                link && !_private && status !== "on pause" && redirect(link);
-            });
-        });
-    },
     ignore_commonHandlers: () => {
         // Arrow Handler
         const doContentBoxElem = document.getElementById(
@@ -354,3 +262,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     debug("Setup Done...");
 });
+

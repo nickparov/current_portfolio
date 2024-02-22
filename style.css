@@ -3,8 +3,13 @@
     font-weight: 400;
 }
 
+.custom-small-tech-icon {
+    font-size: 20px;
+    margin-right: 6px;
+}
+
 body {
-    padding-top: 40px;
+    /* padding-top: 40px; */
     /* background-color: #ffeca5 !important; */
 }
 
@@ -19,11 +24,15 @@ html body .disabled-project-box:hover {
     color: black;
 }
 
-@media screen and (min-width: 400px) {
+#main-content-box {
+    min-height: 100vh;
+}
+
+/* @media screen and (min-width: 400px) {
     #main-content-box {
         margin-top: 70px;
     }
-}
+} */
 
 #arrowText {
     position: absolute;
@@ -70,31 +79,9 @@ html body .disabled-project-box {
     }
 }
 
-@media only screen and (max-width: 700px) {
-    .single-project-box:hover {
-        cursor: default;
-        background-color: white;
-        color: black;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    #mainImage {
-        display: none;
-    }
-
-    .welcome-content {
-        padding-top: 0px !important;
-    }
-
-    #ArrowContainer {
-        transform: translateY(80px);
-    }
-}
-
-.welcome-content {
+/* .welcome-content {
     padding-top: 110px;
-}
+} */
 
 /* old color */
 /* #86abdb */
@@ -105,7 +92,7 @@ html body .disabled-project-box {
 }
 
 #mainImage {
-    margin-top: 85px;
+    /* margin-top: 85px; */
     height: 550px;
 }
 
@@ -113,6 +100,12 @@ html body .disabled-project-box {
     background-color: rgb(25,135,84) !important;
     color: white;
 } */
+
+.custom-btn-flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .btn-custom-mine:hover {
     background-color: #3c7dd2 !important;
@@ -168,6 +161,7 @@ span.undeline {
 
 .single-project-box {
     /* fcf8e9 */
+    position: relative;
     background-color: white;
     border: 1px solid black;
     /* border: 2px solid #ffeca5; */
@@ -197,12 +191,11 @@ span.undeline {
     /* border-right: 1px solid black; */
 }
 
-.single-project-box .project-description {
-    margin-right: auto;
-    margin-left: 15px;
+.background-white-icon-mobile {
+    display: none;
 }
 
-.single-project-box .project-description p {
+p.project-description-item-title {
     font-size: 1.3em;
 }
 
@@ -245,6 +238,7 @@ span.undeline {
 
 .description-small {
     font-size: small;
+    margin-top: 8px;
 }
 
 #menu {
@@ -310,7 +304,7 @@ span.undeline {
 
 #content-categories-box {
     /* background-color: #ffeca5; */
-    margin-top: 250px;
+    /* margin-top: 250px; */
     padding-bottom: 200px;
 }
 
@@ -403,4 +397,94 @@ span.undeline {
 
 .modal.is-open {
     display: block;
+}
+
+.mobile-display-none {
+    display: initial;
+}
+
+.desktop-display-none {
+    display: none;
+}
+
+.single-proj-handle {
+    position: absolute;
+    width: 10px;
+    right: 15px;
+}
+
+@media only screen and (max-width: 400px),
+    only screen and (max-height: 400px) and (orientation: landscape) {
+    #mainImage {
+        display: none;
+    }
+
+    .desktop-display-none {
+        display: initial;
+    }
+
+    /* .welcome-content {
+        padding-top: 0px !important;
+    } */
+    #technologies-box div h1 {
+        font-size: 8vw;
+    }
+
+    #technologies-box .subtext {
+        font-size: 16px;
+    }
+
+    #technologies-box-items-box a {
+        margin-bottom: 3px;
+    }
+
+    .mobile-display-none {
+        display: none;
+    }
+
+    #arrowText {
+        top: 91px;
+        left: 10px;
+        font-weight: 700;
+        transform: rotate(-19deg);
+        text-align: center;
+    }
+
+    #content-categories-box {
+        margin-top: 160px;
+    }
+
+    #arrowPng {
+        position: absolute;
+        width: 72px;
+        transform: rotate(169deg);
+        top: 50px;
+        left: 100px;
+    }
+    .background-white-icon {
+        display: none;
+    }
+
+    .background-white-icon-mobile {
+        display: inline-block;
+    }
+
+    p.project-description-item-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .single-project-box:hover {
+        cursor: default;
+        background-color: white;
+        color: black;
+    }
+
+    .action-box-title {
+        font-size: 1.6em;
+    }
+
+    .action-box-subtext {
+        font-size: 1em;
+    }
 }
