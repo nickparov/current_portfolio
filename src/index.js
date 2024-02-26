@@ -6,6 +6,9 @@ import "../style.css";
 import Resume from "../CV.pdf";
 import main from "../main.jpg";
 import arrowPng from "../arrow.png";
+import diplomaPDF from "./assets/eDiploma.pdf";
+import diplomaPNG from "./assets/diplomaPNG.png";
+
 import {
     ___singeProjectHandle,
     ___singleProjectDescription,
@@ -25,6 +28,8 @@ function isMobile() {
 document.getElementById("resumeDownloadBtn").href = Resume;
 document.getElementById("mainImage").src = main;
 document.getElementById("arrowPng").src = arrowPng;
+document.getElementById("diplomaImg").src = diplomaPNG;
+document.getElementById("download-diplomaPDF").href = diplomaPDF;
 
 // animations
 AOS.init({ delay: 100 });
@@ -262,4 +267,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     debug("Setup Done...");
 });
-

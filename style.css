@@ -305,6 +305,10 @@ p.project-description-item-title {
     height: 250px;
 }
 
+.def-padding-botttom {
+    padding-bottom: 260px;
+}
+
 #content-categories-box {
     /* background-color: #ffeca5; */
     /* margin-top: 250px; */
