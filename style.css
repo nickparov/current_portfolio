@@ -489,6 +489,12 @@ p.project-description-item-title {
         margin-top: 160px;
     }
 
+    #view-my-degree {
+        margin-top: 160px;
+
+        padding-bottom: 0px;
+    }
+
     #arrowPng {
         position: absolute;
         width: 72px;
