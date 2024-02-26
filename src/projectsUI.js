@@ -17,7 +17,7 @@ export function ___singeProjectHandle(isOpen) {
 export function ___singleProjectDescription(title, desc, badgeElems, icon) {
     return `
         <span class="description-small">${desc}</span>
-        <div>
+        <div class="badges">
             ${badgeElems.map((el) => getSingleBadgeHTML(el)).join(" ")}
         </div>`;
 }
@@ -52,15 +52,15 @@ export function __singleProjHTMl(props) {
 
     const isMobileVal = isMobile();
 
-    return `<div class="project-box-parent col-lg-6 col-md-12 col-sm-12">
+    return `<div class="project-box-parent col-lg-6 col-md-12 col-sm-12 my-2">
                 <div class="${boxClasses.join(
                     " "
                 )}" data-title="${title}" data-id="${id}">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-3 d-flex justify-content-center align-items-center">
+                    <div class="row w-100">
+                        <div class="col-xs-12 col-sm-3 d-flex justify-content-center align-items-center">
                             <i class="background-white-icon bi bi-${icon}"></i>
                         </div>
-                        <div class="project-description col-xs-12 col-md-9 d-flex flex-column justify-content-center">
+                        <div class="project-description col-xs-12 col-sm-9 d-flex flex-column justify-content-center">
                             <p class="project-description-item-title">
                                 <i class="background-white-icon-mobile bi bi-${icon}"></i>
                                 ${title}
@@ -86,7 +86,6 @@ export function __singleProjHTMl(props) {
                                     : ""
                             }
                         </div>
-                    </div>
                     ${___singeProjectHandle(isOpen)}
             </div>`;
 }

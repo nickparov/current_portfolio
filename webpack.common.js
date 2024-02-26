@@ -1,25 +1,21 @@
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin =
-    require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 
 module.exports = {
     entry: "./src/index.js",
-    devtool: "inline-source-map",
-    mode: "development",
-    watch: true,
     plugins: [
-        new HtmlWebpackPlugin({
-            title: "Output Management",
-            inject: true,
-            template: path.resolve(__dirname, "src/index.html"), // Remove the leading slash
-            filename: "index.html",
+        new CopyPlugin({
+            patterns: [
+                { from: "src/favicons/favicon.ico", to: "favicon.ico" },
+            ],
         }),
     ],
     output: {
-        filename: "main.js",
+        filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "build"),
     },
+    // Common loaders here
     module: {
         rules: [
             {
