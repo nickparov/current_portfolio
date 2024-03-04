@@ -420,6 +420,16 @@ p.project-description-item-title {
     right: 15px;
 }
 
+#degree-card {
+    padding: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    #degree-card {
+        padding: 0;
+    }
+}
+
 @media only screen and (min-width: 575px) and (max-width: 990px) {
     .single-project-box .row {
         margin: 0;
