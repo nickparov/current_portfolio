@@ -3,7 +3,7 @@ import "aos/dist/aos.css";
 
 import "../style.css";
 
-import Resume from "../CV.pdf";
+import Resume from "../Mykyta_Resume.pdf";
 import main from "../main.jpg";
 import arrowPng from "../arrow.png";
 import diplomaPDF from "./assets/eDiploma.pdf";

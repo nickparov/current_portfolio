@@ -8,6 +8,13 @@
     margin-right: 6px;
 }
 
+/* Inline SVG icons (e.g. Typescript, which has no FontAwesome brand icon) */
+svg.custom-small-tech-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
 body {
     /* padding-top: 40px; */
     /* background-color: #ffeca5 !important; */
